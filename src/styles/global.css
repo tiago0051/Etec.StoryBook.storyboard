@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  @layer base {
+    :root {
+      --eteg-background: 0 0% 100%;
+      --eteg-foreground: 217 28% 25%;
+
+      --eteg-card: 0 0% 100%;
+      --eteg-card-foreground: 222.2 84% 4.9%;
+
+      --eteg-popover: 0 0% 100%;
+      --eteg-popover-foreground: 222.2 84% 4.9%;
+
+      --eteg-primary: 114 42% 46%;
+      --eteg-primary-foreground: 220 13% 95%;
+      --eteg-primary-hover: 114 42% 35%;
+
+      --eteg-secondary: 196 64% 58%;
+      --eteg-secondary-foreground: 220 27% 98%;
+      --eteg-secondary-hover: 196 64% 38%;
+
+      --eteg-muted: 220 13% 95%;
+      --eteg-muted-foreground: 206 11% 71%;
+
+      --eteg-accent: 210 40% 96.1%;
+      --eteg-accent-foreground: 222.2 47.4% 11.2%;
+
+      --eteg-destructive: 0, 90%, 63%, 1;
+      --eteg-destructive-foreground: 210 40% 98%;
+      --eteg-destructive-hover: 0, 46%, 47%, 1;
+
+      --eteg-border: 194, 11%, 46%, 1;
+      --eteg-input: 218 14% 89%;
+      --eteg-ring: 222.2 84% 4.9%;
+
+      --eteg-radius: 6px;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
