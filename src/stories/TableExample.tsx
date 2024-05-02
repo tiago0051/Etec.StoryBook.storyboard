@@ -26,6 +26,12 @@ export function TableExample() {
           <Table.Cell>Credit Card</Table.Cell>
           <Table.Cell className="text-right">$250.00</Table.Cell>
         </Table.Row>
+        <Table.Row>
+          <Table.Cell className="font-medium">INV001</Table.Cell>
+          <Table.Cell>Paid</Table.Cell>
+          <Table.Cell>Credit Card</Table.Cell>
+          <Table.Cell className="text-right">$250.00</Table.Cell>
+        </Table.Row>
       </Table.Body>
     </Table.Root>
   );
