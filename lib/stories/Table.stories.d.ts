@@ -1,5 +1,5 @@
 import type { StoryObj } from "@storybook/react";
-import { TableExample } from "./TableExample";
+import { TableExample } from "../examples/TableExample";
 declare const meta: {
     title: string;
     component: typeof TableExample;

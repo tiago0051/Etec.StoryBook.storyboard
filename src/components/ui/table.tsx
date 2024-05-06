@@ -7,10 +7,10 @@ const TableRoot = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
 >(({ className, ...props }, ref) => (
-  <div className="relative w-full overflow-auto">
+  <div className="relative w-full overflow-auto twp">
     <table
       ref={ref}
-      className={cn("w-full caption-bottom text-sm twp", className)}
+      className={cn("w-full caption-bottom text-sm", className)}
       {...props}
     />
   </div>
@@ -23,7 +23,10 @@ const TableHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <thead
     ref={ref}
-    className={cn("[&_tr]:border-b [&_tr]:border-b-input", className)}
+    className={cn(
+      "[&_tr]:border-b [&_tr]:border-b-input [&_tr]:border-t-transparent",
+      className
+    )}
     {...props}
   />
 ));
@@ -35,10 +38,7 @@ const TableBody = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <tbody
     ref={ref}
-    className={cn(
-      "[&_tr:last-child]:border-0 [&_tr]:border-b-input",
-      className
-    )}
+    className={cn("[&_tr:first-child]:border-0", className)}
     {...props}
   />
 ));
@@ -66,13 +66,38 @@ const TableRow = React.forwardRef<
   <tr
     ref={ref}
     className={cn(
-      "border-b transition-colors data-[state=selected]:bg-muted",
+      "transition-colors data-[state=selected]:bg-muted border-t-input border-t",
       className
     )}
     {...props}
   />
 ));
 TableRow.displayName = "TableRow";
+
+interface TableRowDropDownProps
+  extends React.HTMLAttributes<HTMLTableRowElement> {
+  isOpen: boolean;
+}
+
+const TableRowDropDown = React.forwardRef<
+  HTMLTableRowElement,
+  TableRowDropDownProps
+>(({ className, isOpen, ...props }, ref) => (
+  <Table.Row className="border-t-0">
+    <Table.Cell colSpan={4} className="py-0">
+      <div
+        data-open={isOpen}
+        className={cn(
+          "grid h-0 grid-cols-1 gap-4 overflow-hidden rounded-md bg-muted-foreground/25 px-8 py-0 transition-all data-[open=true]:h-min data-[open=true]:py-6 sm:grid-cols-2 md:grid-cols-3",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    </Table.Cell>
+  </Table.Row>
+));
+TableRowDropDown.displayName = "TableRowDropDown";
 
 const TableHead = React.forwardRef<
   HTMLTableCellElement,
@@ -96,7 +121,7 @@ const TableCell = React.forwardRef<
   <td
     ref={ref}
     className={cn(
-      "py-6 text-sm text-foreground/80 align-middle [&:has([role=checkbox])]:pr-0",
+      "py-6 text-sm text-foreground/80 [&:first-child]:pl-0 [&:last-child]:pr-0 align-middle px-4",
       className
     )}
     {...props}
@@ -123,6 +148,7 @@ export const Table = {
   Footer: TableFooter,
   Head: TableHead,
   Row: TableRow,
+  RowDropDown: TableRowDropDown,
   Cell: TableCell,
   Caption: TableCaption,
 };
