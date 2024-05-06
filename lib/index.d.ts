@@ -54,4 +54,11 @@ declare const Table: {
     Caption: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableCaptionElement> & React.RefAttributes<HTMLTableCaptionElement>>;
 };
 
-export { Button, type ButtonProps, Header, InputFile, type InputProps, InputText, Label, Table, buttonVariants };
+interface PaginationProps {
+    amountPages: number;
+    changePage: (page: number) => void;
+    page: number;
+}
+declare function Pagination({ amountPages, changePage, page }: PaginationProps): React__default.JSX.Element;
+
+export { Button, Header, InputFile, type InputProps, InputText, Label, Pagination, Table };

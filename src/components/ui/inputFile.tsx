@@ -42,12 +42,12 @@ export function InputFile({
   }
 
   return (
-    <div className="relative twp">
+    <div className="eteg-relative twp">
       {label && (
         <Label data-error={!!error} htmlFor={props.name} className="block mb-3">
           {label}{" "}
           {props.required && (
-            <span className="text-xl font-bold text-destructive leading-3">
+            <span className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-leading-3">
               *
             </span>
           )}
@@ -57,29 +57,29 @@ export function InputFile({
         data-disabled={props.disabled}
         data-error={!!error}
         className={cn(
-          "h-12 border border-input grid grid-flow-col gap-3 rounded-md px-5 disabled:cursor-not-allowed data-[disabled=true]:bg-muted data-[error=true]:border-destructive",
+          "eteg-h-12 eteg-border eteg-border-input eteg-grid eteg-grid-flow-col eteg-gap-3 eteg-rounded-md eteg-px-5 eteg-disabled:cursor-not-allowed data-[disabled=true]:eteg-bg-muted data-[error=true]:eteg-border-destructive",
           className
         )}
       >
         <button
-          className="grid grid-flow-col items-center gap-1 border-none bg-transparent text-muted-foreground"
+          className="eteg-grid eteg-grid-flow-col eteg-items-center eteg-gap-1 eteg-border-none eteg-bg-transparent eteg-text-muted-foreground"
           onClick={(e) => handleClickText(e)}
           type="button"
         >
           {Icon && <Icon size={16} />}
-          <p className="truncate text-sm font-lato">
+          <p className="eteg-truncate eteg-text-sm eteg-font-lato">
             {valueText || "Nenhum arquivo selecionado"}
           </p>
         </button>
         <input
-          className="hidden peer/input"
+          className="eteg-hidden eteg-peer/input"
           {...props}
           type="file"
           ref={inputRef}
         />
         <button
           type="button"
-          className="text-sm bg-secondary h-7 rounded-md text-secondary-foreground w-32 self-center"
+          className="eteg-text-sm eteg-bg-secondary eteg-h-7 eteg-rounded-md eteg-text-secondary-foreground eteg-w-32 eteg-self-center"
           onClick={(e) => {
             if (valueText) {
               e.preventDefault();
@@ -94,7 +94,7 @@ export function InputFile({
         </button>
       </div>
       {error && (
-        <span className="absolute -bottom-5 text-xs text-destructive">
+        <span className="eteg-absolute eteg--bottom-5 eteg-text-xs eteg-text-destructive">
           {error}
         </span>
       )}

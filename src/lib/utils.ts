@@ -1,6 +1,9 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from "clsx";
+import { extendTailwindMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  const twMerge = extendTailwindMerge({
+    prefix: "eteg-",
+  });
+  return twMerge(clsx(inputs));
 }

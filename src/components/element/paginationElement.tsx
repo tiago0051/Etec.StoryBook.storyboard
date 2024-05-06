@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Pagination,
+  Pagination as PaginationComponent,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
@@ -9,23 +9,19 @@ import {
   PaginationPrevious,
 } from "../ui/pagination";
 
-interface PaginationElementProps {
+interface PaginationProps {
   amountPages: number;
   changePage: (page: number) => void;
   page: number;
 }
 
-export function PaginationElement({
-  amountPages,
-  changePage,
-  page,
-}: PaginationElementProps) {
+export function Pagination({ amountPages, changePage, page }: PaginationProps) {
   const nextPage = page + 1 < amountPages ? page + 1 : amountPages;
   const previousPage = page - 1 > 1 ? page - 1 : 1;
   const lastPage = amountPages;
 
   return (
-    <Pagination>
+    <PaginationComponent>
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious onClick={() => changePage(previousPage)} />
@@ -54,6 +50,6 @@ export function PaginationElement({
           <PaginationNext onClick={() => changePage(nextPage)} />
         </PaginationItem>
       </PaginationContent>
-    </Pagination>
+    </PaginationComponent>
   );
 }

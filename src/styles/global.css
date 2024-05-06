@@ -41,9 +41,9 @@
 
   @layer base {
     * {
-      @apply border-border;
+      @apply eteg-border-border;
     }
     body {
-      @apply bg-background text-foreground;
+      @apply eteg-bg-background eteg-text-foreground;
     }
   }

@@ -12,7 +12,10 @@ const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
     role="navigation"
     aria-label="pagination"
-    className={cn("mx-auto flex w-full justify-center twp", className)}
+    className={cn(
+      "eteg-mx-auto eteg-flex eteg-w-full eteg-justify-center twp",
+      className
+    )}
     {...props}
   />
 );
@@ -24,7 +27,10 @@ const PaginationContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ul
     ref={ref}
-    className={cn("flex flex-row items-center gap-2", className)}
+    className={cn(
+      "eteg-flex eteg-flex-row eteg-items-center eteg-gap-2",
+      className
+    )}
     {...props}
   />
 ));
@@ -54,7 +60,7 @@ const PaginationLink = ({
       buttonVariants({
         variant: isActive ? "secondary" : "ghost",
       }),
-      "data-[isActive=true]:rounded-full w-6 h-6 data-[isActive=false]:text-muted-foreground text-xs font-lato p-0",
+      "data-[isActive=true]:eteg-rounded-full eteg-w-6 eteg-h-6 data-[isActive=false]:eteg-text-muted-foreground eteg-text-xs eteg-font-lato eteg-p-0",
       className
     )}
     {...props}
@@ -68,7 +74,7 @@ const PaginationPrevious = ({
 }: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
     aria-label="Go to previous page"
-    className={cn("gap-1 pl-2.5", className)}
+    className={cn("eteg-gap-1 eteg-pl-2.5", className)}
     {...props}
   >
     <FiChevronLeft className="h-4 w-4" />
@@ -83,11 +89,11 @@ const PaginationNext = ({
 }: React.ComponentProps<typeof PaginationLink>) => (
   <PaginationLink
     aria-label="Go to next page"
-    className={cn("gap-1 pr-2.5", className)}
+    className={cn("eteg-gap-1 eteg-pr-2.5", className)}
     {...props}
   >
     {/* <span>Next</span> */}
-    <FiChevronRight className="h-4 w-4" />
+    <FiChevronRight className="eteg-h-4 eteg-w-4" />
   </PaginationLink>
 );
 PaginationNext.displayName = "PaginationNext";
@@ -99,12 +105,12 @@ const PaginationEllipsis = ({
   <span
     aria-hidden
     className={cn(
-      "flex h-6 w-6 items-end justify-center text-muted-foreground",
+      "eteg-flex eteg-h-6 eteg-w-6 eteg-items-end eteg-justify-center eteg-text-muted-foreground",
       className
     )}
     {...props}
   >
-    <FiMoreHorizontal className="text-sm" />
+    <FiMoreHorizontal className="eteg-text-sm" />
     {/* <span className="sr-only">More pages</span> */}
   </span>
 );

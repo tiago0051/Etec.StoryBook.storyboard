@@ -1,8 +1,8 @@
 import React from "react";
-interface PaginationElementProps {
+interface PaginationProps {
     amountPages: number;
     changePage: (page: number) => void;
     page: number;
 }
-export declare function PaginationElement({ amountPages, changePage, page, }: PaginationElementProps): React.JSX.Element;
+export declare function Pagination({ amountPages, changePage, page }: PaginationProps): React.JSX.Element;
 export {};

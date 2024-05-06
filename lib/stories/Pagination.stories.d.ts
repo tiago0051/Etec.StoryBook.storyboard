@@ -1,8 +1,8 @@
 import type { StoryObj } from "@storybook/react";
-import { PaginationElement } from "@/components/element/paginationElement";
+import { Pagination } from "@/components/element/paginationElement";
 declare const meta: {
     title: string;
-    component: typeof PaginationElement;
+    component: typeof Pagination;
     parameters: {};
     tags: string[];
     argTypes: {};

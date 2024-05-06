@@ -7,10 +7,10 @@ const TableRoot = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
 >(({ className, ...props }, ref) => (
-  <div className="relative w-full overflow-auto twp">
+  <div className="eteg-relative eteg-w-full eteg-overflow-auto twp">
     <table
       ref={ref}
-      className={cn("w-full caption-bottom text-sm", className)}
+      className={cn("eteg-w-full eteg-caption-bottom eteg-text-sm", className)}
       {...props}
     />
   </div>
@@ -24,7 +24,7 @@ const TableHeader = React.forwardRef<
   <thead
     ref={ref}
     className={cn(
-      "[&_tr]:border-b [&_tr]:border-b-input [&_tr]:border-t-transparent",
+      "[&_tr]:eteg-border-b [&_tr]:eteg-border-b-input [&_tr]:eteg-border-t-transparent",
       className
     )}
     {...props}
@@ -38,7 +38,7 @@ const TableBody = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <tbody
     ref={ref}
-    className={cn("[&_tr:first-child]:border-0", className)}
+    className={cn("[&_tr:first-child]:eteg-border-0", className)}
     {...props}
   />
 ));
@@ -51,7 +51,7 @@ const TableFooter = React.forwardRef<
   <tfoot
     ref={ref}
     className={cn(
-      "border-t bg-muted/50 font-medium [&>tr]:last:border-b-0",
+      "eteg-border-t eteg-bg-muted/50 eteg-font-medium [&>tr]:last:eteg-border-b-0",
       className
     )}
     {...props}
@@ -66,7 +66,7 @@ const TableRow = React.forwardRef<
   <tr
     ref={ref}
     className={cn(
-      "transition-colors data-[state=selected]:bg-muted border-t-input border-t",
+      "eteg-transition-colors data-[state=selected]:eteg-bg-muted eteg-border-t-input eteg-border-t",
       className
     )}
     {...props}
@@ -88,7 +88,7 @@ const TableRowDropDown = React.forwardRef<
       <div
         data-open={isOpen}
         className={cn(
-          "grid h-0 grid-cols-1 gap-4 overflow-hidden rounded-md bg-muted-foreground/25 px-8 py-0 transition-all data-[open=true]:h-min data-[open=true]:py-6 sm:grid-cols-2 md:grid-cols-3",
+          "eteg-grid eteg-h-0 eteg-grid-cols-1 eteg-gap-4 eteg-overflow-hidden eteg-rounded-md eteg-bg-muted-foreground/25 eteg-px-8 eteg-py-0 eteg-transition-all data-[open=true]:eteg-h-min data-[open=true]:eteg-py-6 eteg-sm:grid-cols-2 eteg-md:grid-cols-3",
           className
         )}
         ref={ref}
@@ -106,7 +106,7 @@ const TableHead = React.forwardRef<
   <th
     ref={ref}
     className={cn(
-      "py-6 space-x-4 text-left text-sm text-foreground align-middle font-semibold font-lato [&:has([role=checkbox])]:pr-0",
+      "eteg-py-6 eteg-space-x-4 eteg-text-left eteg-text-sm eteg-text-foreground eteg-align-middle eteg-font-semibold eteg-font-lato [&:has([role=checkbox])]:eteg-pr-0",
       className
     )}
     {...props}
@@ -121,7 +121,7 @@ const TableCell = React.forwardRef<
   <td
     ref={ref}
     className={cn(
-      "py-6 text-sm text-foreground/80 [&:first-child]:pl-0 [&:last-child]:pr-0 align-middle px-4",
+      "eteg-py-6 eteg-text-sm eteg-text-foreground/80 [&:first-child]:eteg-pl-0 [&:last-child]:eteg-pr-0 eteg-align-middle eteg-px-4",
       className
     )}
     {...props}
@@ -135,7 +135,10 @@ const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <caption
     ref={ref}
-    className={cn("mt-4 text-sm text-muted-foreground", className)}
+    className={cn(
+      "eteg-mt-4 eteg-text-sm eteg-text-muted-foreground",
+      className
+    )}
     {...props}
   />
 ));

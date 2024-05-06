@@ -12,16 +12,16 @@ export interface InputProps
 const InputText = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, label, error, ...props }, ref) => {
     return (
-      <div className="relative twp">
+      <div className="eteg-relative twp">
         {label && (
           <Label
             data-error={!!error}
             htmlFor={props.name}
-            className="block mb-3"
+            className="eteg-block eteg-mb-3"
           >
             {label}{" "}
             {props.required && (
-              <span className="text-xl font-bold text-destructive leading-3">
+              <span className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-leading-3">
                 *
               </span>
             )}
@@ -31,14 +31,14 @@ const InputText = React.forwardRef<HTMLInputElement, InputProps>(
           type={type}
           data-error={!!error}
           className={cn(
-            "flex h-12 w-full rounded-md border border-input bg-transparent px-4 text-sm placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground text-foreground data-[error=true]:border-destructive",
+            "eteg-flex eteg-h-12 eteg-w-full eteg-rounded-md eteg-border eteg-border-input eteg-bg-transparent eteg-px-4 eteg-text-sm eteg-placeholder:text-muted-foreground eteg-disabled:cursor-not-allowed eteg-disabled:bg-muted eteg-disabled:text-muted-foreground eteg-text-foreground data-[error=true]:eteg-border-destructive",
             className
           )}
           ref={ref}
           {...props}
         />
         {error && (
-          <span className="absolute -bottom-5 text-xs text-destructive">
+          <span className="eteg-absolute eteg--bottom-5 eteg-text-xs eteg-text-destructive">
             {error}
           </span>
         )}

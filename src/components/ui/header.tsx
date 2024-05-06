@@ -22,25 +22,27 @@ export function Header({
           variant="link"
           size="none"
           type="button"
-          className="flex gap-3 text-foreground/60 hover:text-foreground mb-5"
+          className="eteg-flex eteg-gap-3 eteg-text-foreground/60 eteg-hover:text-foreground eteg-mb-5"
           onClick={() => onBackClick()}
         >
           <BsArrowLeft size={16} />
           Voltar
         </Button>
       )}
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+      <div className="eteg-flex eteg-flex-col eteg-sm:flex-row eteg-sm:justify-between eteg-sm:items-center eteg-gap-4">
         <div>
-          <h1 className="font-lato font-semibold text-3xl text-foreground mb-1">
+          <h1 className="eteg-font-lato eteg-font-semibold eteg-text-3xl eteg-text-foreground eteg-mb-1">
             {title}
           </h1>
-          <p className="font-lato font-semibold text-base text-foreground/60">
+          <p className="eteg-font-lato eteg-font-semibold eteg-text-base eteg-text-foreground/60">
             {subtitle}
           </p>
         </div>
 
         {children && (
-          <div className="sm:max-w-xs w-full flex justify-end">{children}</div>
+          <div className="eteg-sm:max-w-xs eteg-w-full eteg-flex eteg-justify-end">
+            {children}
+          </div>
         )}
       </div>
     </div>

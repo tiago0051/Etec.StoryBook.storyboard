@@ -5,26 +5,27 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 twp",
+  "eteg-inline-flex eteg-items-center eteg-justify-center eteg-whitespace-nowrap eteg-rounded-md eteg-text-sm eteg-font-medium eteg-ring-offset-background eteg-transition-colors eteg-focus-visible:outline-none eteg-focus-visible:ring-2 eteg-focus-visible:ring-ring eteg-focus-visible:ring-offset-2 eteg-disabled:pointer-events-none eteg-disabled:opacity-50 twp",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary-hover",
+        default:
+          "eteg-bg-primary eteg-text-primary-foreground eteg-hover:bg-primary-hover",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive-hover",
+          "eteg-bg-destructive eteg-text-destructive-foreground eteg-hover:bg-destructive-hover",
         outline:
-          "border border-primary bg-transparent text-primary hover:bg-accent hover:text-primary-foreground hover:bg-primary",
+          "eteg-border eteg-border-primary eteg-bg-transparent eteg-text-primary eteg-hover:bg-accent eteg-hover:text-primary-foreground eteg-hover:bg-primary",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary-hover",
-        ghost: "text-primary hover:text-primary-hover",
-        link: "text-primary underline-offset-4 hover:underline hover:text-primary-hover",
+          "eteg-bg-secondary eteg-text-secondary-foreground eteg-hover:bg-secondary-hover",
+        ghost: "eteg-text-primary eteg-hover:text-primary-hover",
+        link: "eteg-text-primary eteg-underline-offset-4 eteg-hover:underline eteg-hover:text-primary-hover",
       },
       size: {
-        default: "h-12 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
-        none: "h-min w-min",
+        default: "eteg-h-12 eteg-px-4 eteg-py-2",
+        sm: "eteg-h-9 eteg-rounded-md eteg-px-3",
+        lg: "eteg-h-11 eteg-rounded-md eteg-px-8",
+        icon: "eteg-h-10 eteg-w-10",
+        none: "eteg-h-min eteg-w-min",
       },
     },
     defaultVariants: {

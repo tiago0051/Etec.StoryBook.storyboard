@@ -12,7 +12,7 @@ module.exports = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-  prefix: "",
+  prefix: "eteg-",
   theme: {
     container: {
       center: true,
