@@ -4,6 +4,7 @@ import React__default, { ReactNode, InputHTMLAttributes } from 'react';
 import { VariantProps } from 'class-variance-authority';
 import { IconType } from 'react-icons';
 import * as LabelPrimitive from '@radix-ui/react-label';
+import * as SelectPrimitive from '@radix-ui/react-select';
 
 declare const buttonVariants: (props?: ({
     variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined;
@@ -54,11 +55,29 @@ declare const Table: {
     Caption: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableCaptionElement> & React.RefAttributes<HTMLTableCaptionElement>>;
 };
 
-interface PaginationProps {
+interface PaginationProps extends React__default.ComponentProps<"nav"> {
     amountPages: number;
     changePage: (page: number) => void;
     page: number;
 }
-declare function Pagination({ amountPages, changePage, page }: PaginationProps): React__default.JSX.Element;
+declare function Pagination({ amountPages, changePage, page, className, }: PaginationProps): React__default.JSX.Element;
 
-export { Button, Header, InputFile, type InputProps, InputText, Label, Pagination, Table };
+interface SelectItemProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> {
+    selected: boolean;
+}
+declare const Select: {
+    Root: React.FC<SelectPrimitive.SelectProps>;
+    Group: React.ForwardRefExoticComponent<SelectPrimitive.SelectGroupProps & React.RefAttributes<HTMLDivElement>>;
+    Value: React.ForwardRefExoticComponent<SelectPrimitive.SelectValueProps & React.RefAttributes<HTMLSpanElement>>;
+    Trigger: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectTriggerProps & React.RefAttributes<HTMLButtonElement>, "ref"> & React.RefAttributes<HTMLButtonElement>>;
+    Content: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectContentProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+    Label: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectLabelProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+    Item: React.ForwardRefExoticComponent<SelectItemProps & React.RefAttributes<HTMLDivElement>>;
+    Separator: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectSeparatorProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+    ScrollUpButton: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectScrollUpButtonProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+    ScrollDownButton: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectScrollUpButtonProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+};
+
+declare function Skeleton({ className, ...props }: React__default.HTMLAttributes<HTMLDivElement>): React__default.JSX.Element;
+
+export { Button, Header, InputFile, type InputProps, InputText, Label, Pagination, Select, Skeleton, Table };

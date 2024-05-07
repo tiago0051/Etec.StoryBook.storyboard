@@ -55,12 +55,12 @@ const PaginationLink = ({
 }: PaginationLinkProps) => (
   <a
     aria-current={isActive ? "page" : undefined}
-    data-isActive={!!isActive}
+    data-active={!!isActive}
     className={cn(
       buttonVariants({
         variant: isActive ? "secondary" : "ghost",
       }),
-      "data-[isActive=true]:eteg-rounded-full eteg-w-6 eteg-h-6 data-[isActive=false]:eteg-text-muted-foreground eteg-text-xs eteg-font-lato eteg-p-0",
+      "data-[active=true]:eteg-rounded-full eteg-w-6 eteg-h-6 data-[active=false]:eteg-text-muted-foreground eteg-text-xs eteg-font-lato eteg-p-0",
       className
     )}
     {...props}

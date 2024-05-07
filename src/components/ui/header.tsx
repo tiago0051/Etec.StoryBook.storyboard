@@ -29,7 +29,7 @@ export function Header({
           Voltar
         </Button>
       )}
-      <div className="eteg-flex eteg-flex-col eteg-sm:flex-row eteg-sm:justify-between eteg-sm:items-center eteg-gap-4">
+      <div className="eteg-flex eteg-flex-col sm:eteg-flex-row sm:eteg-justify-between sm:eteg-items-center eteg-gap-4">
         <div>
           <h1 className="eteg-font-lato eteg-font-semibold eteg-text-3xl eteg-text-foreground eteg-mb-1">
             {title}
@@ -40,7 +40,7 @@ export function Header({
         </div>
 
         {children && (
-          <div className="eteg-sm:max-w-xs eteg-w-full eteg-flex eteg-justify-end">
+          <div className="sm:eteg-max-w-xs eteg-w-full eteg-flex eteg-justify-end">
             {children}
           </div>
         )}

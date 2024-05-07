@@ -12,7 +12,7 @@ export interface InputProps
 const InputText = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, label, error, ...props }, ref) => {
     return (
-      <div className="eteg-relative twp">
+      <div className={cn("eteg-relative twp", className)}>
         {label && (
           <Label
             data-error={!!error}
@@ -30,10 +30,7 @@ const InputText = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           data-error={!!error}
-          className={cn(
-            "eteg-flex eteg-h-12 eteg-w-full eteg-rounded-md eteg-border eteg-border-input eteg-bg-transparent eteg-px-4 eteg-text-sm eteg-placeholder:text-muted-foreground eteg-disabled:cursor-not-allowed eteg-disabled:bg-muted eteg-disabled:text-muted-foreground eteg-text-foreground data-[error=true]:eteg-border-destructive",
-            className
-          )}
+          className="eteg-flex eteg-h-12 eteg-w-full eteg-rounded-md eteg-border eteg-border-input eteg-bg-transparent eteg-px-4 eteg-text-sm eteg-placeholder:text-muted-foreground eteg-disabled:cursor-not-allowed eteg-disabled:bg-muted eteg-disabled:text-muted-foreground eteg-text-foreground data-[error=true]:eteg-border-destructive"
           ref={ref}
           {...props}
         />

@@ -83,12 +83,12 @@ const TableRowDropDown = React.forwardRef<
   HTMLTableRowElement,
   TableRowDropDownProps
 >(({ className, isOpen, ...props }, ref) => (
-  <Table.Row className="border-t-0">
-    <Table.Cell colSpan={4} className="py-0">
+  <Table.Row className="eteg-border-t-0">
+    <Table.Cell colSpan={4} className="eteg-py-0">
       <div
         data-open={isOpen}
         className={cn(
-          "eteg-grid eteg-h-0 eteg-grid-cols-1 eteg-gap-4 eteg-overflow-hidden eteg-rounded-md eteg-bg-muted-foreground/25 eteg-px-8 eteg-py-0 eteg-transition-all data-[open=true]:eteg-h-min data-[open=true]:eteg-py-6 eteg-sm:grid-cols-2 eteg-md:grid-cols-3",
+          "eteg-grid eteg-h-0 eteg-grid-cols-1 eteg-gap-4 eteg-overflow-hidden eteg-rounded-md eteg-bg-muted-foreground/25 eteg-px-8 eteg-py-0 eteg-transition-all data-[open=true]:eteg-h-min data-[open=true]:eteg-py-6 sm:eteg-grid-cols-2 md:eteg-grid-cols-3",
           className
         )}
         ref={ref}

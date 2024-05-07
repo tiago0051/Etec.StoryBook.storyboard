@@ -11,7 +11,7 @@
       --eteg-card-foreground: 222.2 84% 4.9%;
 
       --eteg-popover: 0 0% 100%;
-      --eteg-popover-foreground: 222.2 84% 4.9%;
+      --eteg-popover-foreground: 218 14% 60%;
 
       --eteg-primary: 114 42% 46%;
       --eteg-primary-foreground: 220 13% 95%;
@@ -32,7 +32,7 @@
       --eteg-destructive-hover: 0, 46%, 47%, 1;
 
       --eteg-border: 194 11% 46%;
-      --eteg-input: 218 14% 89%;
+      --eteg-input: 218 14% 80%;
       --eteg-ring: 222.2 84% 4.9%;
 
       --eteg-radius: 6px;

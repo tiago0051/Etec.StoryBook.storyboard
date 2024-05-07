@@ -9,19 +9,24 @@ import {
   PaginationPrevious,
 } from "../ui/pagination";
 
-interface PaginationProps {
+interface PaginationProps extends React.ComponentProps<"nav"> {
   amountPages: number;
   changePage: (page: number) => void;
   page: number;
 }
 
-export function Pagination({ amountPages, changePage, page }: PaginationProps) {
+export function Pagination({
+  amountPages,
+  changePage,
+  page,
+  className,
+}: PaginationProps) {
   const nextPage = page + 1 < amountPages ? page + 1 : amountPages;
   const previousPage = page - 1 > 1 ? page - 1 : 1;
   const lastPage = amountPages;
 
   return (
-    <PaginationComponent>
+    <PaginationComponent className={className}>
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious onClick={() => changePage(previousPage)} />

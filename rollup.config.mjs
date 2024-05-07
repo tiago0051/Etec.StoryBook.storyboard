@@ -15,6 +15,7 @@ const packageJson = requireFile("./package.json");
 export default [
   {
     input: "src/index.ts",
+    external: ["react", "react-dom"],
     output: [
       {
         file: packageJson.main,
@@ -31,7 +32,14 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript(),
+      typescript({
+        exclude: [
+          "node_modules/**",
+          "lib",
+          "src/**/*.stories.tsx",
+          "src/**/*.test.tsx",
+        ],
+      }),
       postcss({
         extensions: [".css"],
       }),
