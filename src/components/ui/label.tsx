@@ -15,15 +15,14 @@ const Label = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <LabelPrimitive.Root
     ref={ref}
-    className={cn(
-      labelVariants(),
-      "peer-required:[&>span]:eteg-visible",
-      className
-    )}
+    className={cn(labelVariants(), className)}
     {...props}
   >
     {children}{" "}
-    <span className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-leading-3 hidden">
+    <span
+      className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-leading-3 eteg-hidden aria-required:eteg-inline"
+      aria-required={props["aria-required"]}
+    >
       *
     </span>
   </LabelPrimitive.Root>

@@ -9,28 +9,28 @@ export interface InputProps
   label?: string;
   error?: string;
   icon?: IconType;
+  inputClassName?: string;
 }
 
 const InputText = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, label, error, icon: Icon, ...props }, ref) => {
+  (
+    { className, type, label, error, icon: Icon, inputClassName, ...props },
+    ref
+  ) => {
     return (
       <div className={cn("eteg-relative twp", className)}>
         {label && (
           <Label
             data-error={!!error}
             htmlFor={props.name}
-            className="eteg-block eteg-mb-3"
+            className="eteg-block eteg-mb-3 peer"
+            aria-required={!!props.required}
           >
             {label}
-            {/* {props.required && (
-              <span className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-leading-3">
-                *
-              </span>
-            )} */}
           </Label>
         )}
 
-        <div className="eteg-relative eteg-flex eteg-items-center peer">
+        <div className="eteg-relative eteg-flex eteg-items-center">
           {Icon && (
             <Icon
               size={18}
@@ -42,7 +42,10 @@ const InputText = React.forwardRef<HTMLInputElement, InputProps>(
             type={type}
             data-error={!!error}
             data-icon={!!Icon}
-            className="eteg-flex eteg-h-12 eteg-w-full eteg-rounded-md eteg-border eteg-border-input eteg-bg-transparent eteg-px-4 eteg-text-sm placeholder:text-muted-foreground eteg-disabled:cursor-not-allowed eteg-disabled:bg-muted eteg-disabled:text-muted-foreground eteg-text-foreground data-[error=true]:eteg-border-destructive data-[icon=true]:eteg-pl-12 focus:eteg-outline-none"
+            className={cn(
+              "eteg-flex eteg-h-12 eteg-w-full eteg-rounded-md eteg-border eteg-border-input eteg-bg-transparent eteg-px-4 eteg-text-sm placeholder:text-muted-foreground eteg-disabled:cursor-not-allowed eteg-disabled:bg-muted eteg-disabled:text-muted-foreground eteg-text-foreground data-[error=true]:eteg-border-destructive data-[icon=true]:eteg-pl-12 focus:eteg-outline-none",
+              inputClassName
+            )}
             ref={ref}
             {...props}
           />
