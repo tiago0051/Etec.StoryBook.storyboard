@@ -10,3 +10,4 @@ export * from "./components/element/paginationElement";
 export * from "./components/ui/select";
 export * from "./components/ui/label";
 export * from "./components/ui/skeleton";
+export * from "./components/ui/badge";

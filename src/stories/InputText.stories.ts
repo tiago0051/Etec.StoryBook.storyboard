@@ -1,6 +1,7 @@
 import { InputText } from "@/components/ui/inputText";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
+import { FiSearch } from "react-icons/fi";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -60,5 +61,13 @@ export const Placeholder: Story = {
   args: {
     placeholder: "teste",
     label: "Button",
+  },
+};
+
+export const Icon: Story = {
+  args: {
+    value: "teste",
+    label: "Button",
+    icon: FiSearch,
   },
 };

@@ -62,6 +62,10 @@ module.exports = {
           DEFAULT: "hsl(var(--eteg-card))",
           foreground: "hsl(var(--eteg-card-foreground))",
         },
+        badge: {
+          DEFAULT: "hsl(var(--eteg-badge))",
+          foreground: "hsl(var(--eteg-badge-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--eteg-radius)",

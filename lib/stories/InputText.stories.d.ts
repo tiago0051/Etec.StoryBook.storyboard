@@ -32,3 +32,4 @@ export declare const Disabled: Story;
 export declare const Error: Story;
 export declare const Required: Story;
 export declare const Placeholder: Story;
+export declare const Icon: Story;

@@ -60,7 +60,7 @@ const PaginationLink = ({
       buttonVariants({
         variant: isActive ? "secondary" : "ghost",
       }),
-      "data-[active=true]:eteg-rounded-full eteg-w-6 eteg-h-6 data-[active=false]:eteg-text-muted-foreground eteg-text-xs eteg-font-lato eteg-p-0",
+      "data-[active=true]:eteg-rounded-full eteg-w-6 eteg-h-6 data-[active=false]:eteg-text-muted-foreground eteg-text-xs eteg-font-lato eteg-p-0 eteg-cursor-pointer",
       className
     )}
     {...props}

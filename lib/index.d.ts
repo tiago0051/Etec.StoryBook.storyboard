@@ -35,6 +35,7 @@ declare function InputFile({ valueText, label, error, onRemove, className, icon:
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     error?: string;
+    icon?: IconType;
 }
 declare const InputText: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 
@@ -80,4 +81,11 @@ declare const Select: {
 
 declare function Skeleton({ className, ...props }: React__default.HTMLAttributes<HTMLDivElement>): React__default.JSX.Element;
 
-export { Button, Header, InputFile, type InputProps, InputText, Label, Pagination, Select, Skeleton, Table };
+declare const badgeVariants: (props?: ({
+    variant?: "default" | "destructive" | "outline" | "secondary" | "primary" | null | undefined;
+} & class_variance_authority_dist_types.ClassProp) | undefined) => string;
+interface BadgeProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {
+}
+declare function Badge({ className, variant, ...props }: BadgeProps): React.JSX.Element;
+
+export { Badge, type BadgeProps, Button, Header, InputFile, type InputProps, InputText, Label, Pagination, Select, Skeleton, Table, badgeVariants };

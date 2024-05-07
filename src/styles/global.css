@@ -35,6 +35,9 @@
       --eteg-input: 218 14% 80%;
       --eteg-ring: 222.2 84% 4.9%;
 
+      --eteg-badge: 160 61% 79%;
+      --eteg-badge-foreground: 217 28% 25%;
+
       --eteg-radius: 6px;
     }
   }

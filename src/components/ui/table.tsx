@@ -88,7 +88,7 @@ const TableRowDropDown = React.forwardRef<
       <div
         data-open={isOpen}
         className={cn(
-          "eteg-grid eteg-h-0 eteg-grid-cols-1 eteg-gap-4 eteg-overflow-hidden eteg-rounded-md eteg-bg-muted-foreground/25 eteg-px-8 eteg-py-0 eteg-transition-all data-[open=true]:eteg-h-min data-[open=true]:eteg-py-6 sm:eteg-grid-cols-2 md:eteg-grid-cols-3",
+          "eteg-grid data-[open=true]:eteg-mb-4 eteg-h-0 eteg-grid-cols-1 eteg-gap-4 eteg-overflow-hidden eteg-rounded-md eteg-bg-muted-foreground/20 eteg-px-8 eteg-py-0 eteg-transition-all data-[open=true]:eteg-h-min data-[open=true]:eteg-py-6 sm:eteg-grid-cols-2 md:eteg-grid-cols-3",
           className
         )}
         ref={ref}
@@ -121,7 +121,7 @@ const TableCell = React.forwardRef<
   <td
     ref={ref}
     className={cn(
-      "eteg-py-6 eteg-text-sm eteg-text-foreground/80 [&:first-child]:eteg-pl-0 [&:last-child]:eteg-pr-0 eteg-align-middle eteg-px-4",
+      "eteg-py-6 eteg-text-sm eteg-text-foreground/80 [&:last-child]:eteg-pr-0 eteg-align-middle eteg-pr-4",
       className
     )}
     {...props}
