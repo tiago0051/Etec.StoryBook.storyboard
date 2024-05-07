@@ -21,16 +21,16 @@ const InputText = React.forwardRef<HTMLInputElement, InputProps>(
             htmlFor={props.name}
             className="eteg-block eteg-mb-3"
           >
-            {label}{" "}
-            {props.required && (
+            {label}
+            {/* {props.required && (
               <span className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-leading-3">
                 *
               </span>
-            )}
+            )} */}
           </Label>
         )}
 
-        <div className="eteg-relative eteg-flex eteg-items-center">
+        <div className="eteg-relative eteg-flex eteg-items-center peer">
           {Icon && (
             <Icon
               size={18}

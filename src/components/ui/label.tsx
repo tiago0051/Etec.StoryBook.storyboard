@@ -12,12 +12,21 @@ const Label = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
     VariantProps<typeof labelVariants>
->(({ className, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <LabelPrimitive.Root
     ref={ref}
-    className={cn(labelVariants(), className)}
+    className={cn(
+      labelVariants(),
+      "peer-required:[&>span]:eteg-visible",
+      className
+    )}
     {...props}
-  />
+  >
+    {children}{" "}
+    <span className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-leading-3 hidden">
+      *
+    </span>
+  </LabelPrimitive.Root>
 ));
 Label.displayName = LabelPrimitive.Root.displayName;
 
