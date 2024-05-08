@@ -1,5 +1,5 @@
 import React from "react";
-import { Combobox } from "@/components/element/ComboboxElement";
+import { Combobox } from "@/components/element/comboboxElement";
 
 export function ComboboxExample() {
   return (

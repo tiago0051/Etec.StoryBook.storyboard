@@ -5,6 +5,7 @@ import { VariantProps } from 'class-variance-authority';
 import { IconType } from 'react-icons';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import * as SelectPrimitive from '@radix-ui/react-select';
+import { ButtonProps as ButtonProps$1 } from '@/components/ui/button';
 
 declare const buttonVariants: (props?: ({
     variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined;
@@ -36,6 +37,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     error?: string;
     icon?: IconType;
+    inputClassName?: string;
 }
 declare const InputText: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 
@@ -88,4 +90,13 @@ interface BadgeProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<
 }
 declare function Badge({ className, variant, ...props }: BadgeProps): React.JSX.Element;
 
-export { Badge, type BadgeProps, Button, Header, InputFile, type InputProps, InputText, Label, Pagination, Select, Skeleton, Table, badgeVariants };
+interface ComboboxRootProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    children: React.ReactNode;
+}
+declare function ComboboxRoot({ children, ...props }: ComboboxRootProps): React.JSX.Element;
+declare const Combobox: {
+    Root: typeof ComboboxRoot;
+    Item: React.ForwardRefExoticComponent<ButtonProps$1 & React.RefAttributes<HTMLButtonElement>>;
+};
+
+export { Badge, type BadgeProps, Button, Combobox, Header, InputFile, type InputProps, InputText, Label, Pagination, Select, Skeleton, Table, badgeVariants };

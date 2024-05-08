@@ -66,6 +66,10 @@ module.exports = {
           DEFAULT: "hsl(var(--eteg-badge))",
           foreground: "hsl(var(--eteg-badge-foreground))",
         },
+        table: {
+          line: "hsl(var(--eteg-table-line))",
+          dropdown: "hsl(var(--eteg-table-dropdown))",
+        },
       },
       borderRadius: {
         lg: "var(--eteg-radius)",

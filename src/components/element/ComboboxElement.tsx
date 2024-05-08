@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 
 import { Button, ButtonProps } from "@/components/ui/button";
@@ -11,13 +9,12 @@ import {
 import { FiSearch } from "react-icons/fi";
 import { InputText } from "../ui/inputText";
 import { cn } from "@/lib/utils";
-
-interface ComboboxRootProps {
+interface PopOverContentProps {
   children: React.ReactNode;
   width?: string;
 }
 
-const PopOverContent = ({ children, width }: ComboboxRootProps) => {
+const PopOverContent = ({ children, width }: PopOverContentProps) => {
   React.useEffect(() => {
     const element = document.getElementById("popover");
 
@@ -26,7 +23,12 @@ const PopOverContent = ({ children, width }: ComboboxRootProps) => {
   return <div className="eteg-grid eteg-w-96">{children}</div>;
 };
 
-function ComboboxRoot({ children }: ComboboxRootProps) {
+interface ComboboxRootProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  children: React.ReactNode;
+}
+
+function ComboboxRoot({ children, ...props }: ComboboxRootProps) {
   const divRef = React.useRef<HTMLDivElement>(null);
   const width = divRef.current?.parentElement?.clientWidth.toString();
 
@@ -46,20 +48,20 @@ function ComboboxRoot({ children }: ComboboxRootProps) {
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild onClick={(e) => e.preventDefault()}>
           <div
-            className="eteg-grid eteg-grid-cols-6 eteg-border eteg-border-input eteg-rounded-md eteg-overflow-hidden"
+            className="eteg-relative eteg-border eteg-border-input eteg-rounded-md eteg-overflow-hidden"
             ref={divRef}
           >
             <InputText
               icon={FiSearch}
               inputClassName="eteg-border-none"
-              className="eteg-col-span-4"
               onKeyDown={(e) => {
                 setValue(e.currentTarget.value);
                 if (e.key === "Enter") openPopover(e.currentTarget.value);
               }}
+              {...props}
             />
             <Button
-              className="eteg-col-span-2 -eteg-ml-1 eteg-z-10 eteg-rounded-e-none"
+              className="eteg-absolute eteg-right-0 eteg-top-0 eteg-rounded-none eteg-w-32"
               onClick={() => openPopover(value)}
             >
               Buscar

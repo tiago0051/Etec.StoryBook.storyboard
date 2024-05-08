@@ -22,7 +22,7 @@ export function Header({
           variant="link"
           size="none"
           type="button"
-          className="eteg-flex eteg-gap-3 eteg-text-foreground/60 eteg-hover:text-foreground eteg-mb-5"
+          className="eteg-flex eteg-gap-3 eteg-text-foreground/70 eteg-hover:text-foreground eteg-mb-4 eteg-capitalize text-base eteg-font-bold eteg-font-lato"
           onClick={() => onBackClick()}
         >
           <BsArrowLeft size={16} />
@@ -31,10 +31,10 @@ export function Header({
       )}
       <div className="eteg-flex eteg-flex-col sm:eteg-flex-row sm:eteg-justify-between sm:eteg-items-center eteg-gap-4">
         <div>
-          <h1 className="eteg-font-lato eteg-font-semibold eteg-text-3xl eteg-text-foreground eteg-mb-1">
+          <h1 className="eteg-font-lato eteg-font-semibold eteg-text-[32px] eteg-text-foreground">
             {title}
           </h1>
-          <p className="eteg-font-lato eteg-font-semibold eteg-text-base eteg-text-foreground/60">
+          <p className="eteg-font-lato eteg-font-semibold eteg-text-sm eteg-text-foreground/65">
             {subtitle}
           </p>
         </div>

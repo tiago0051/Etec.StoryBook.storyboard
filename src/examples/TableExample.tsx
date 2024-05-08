@@ -7,7 +7,7 @@ export function TableExample() {
       <Table.Caption>A list of your recent invoices.</Table.Caption>
       <Table.Header>
         <Table.Row>
-          <Table.Head className="eteg-w-[100px]">Invoice</Table.Head>
+          <Table.Head>Invoice</Table.Head>
           <Table.Head>Status</Table.Head>
           <Table.Head>Method</Table.Head>
           <Table.Head className="eteg-text-right">Amount</Table.Head>
@@ -15,7 +15,7 @@ export function TableExample() {
       </Table.Header>
       <Table.Body>
         <Table.Row>
-          <Table.Cell className="eteg-font-medium">INV001</Table.Cell>
+          <Table.Cell>Karin Cristina M</Table.Cell>
           <Table.Cell>Paid</Table.Cell>
           <Table.Cell>Credit Card</Table.Cell>
           <Table.Cell className="eteg-text-right">$250.00</Table.Cell>
@@ -29,13 +29,13 @@ export function TableExample() {
           </p>
         </Table.RowDropDown>
         <Table.Row>
-          <Table.Cell className="eteg-font-medium">INV001</Table.Cell>
+          <Table.Cell>Karin Cristina M</Table.Cell>
           <Table.Cell>Paid</Table.Cell>
           <Table.Cell>Credit Card</Table.Cell>
           <Table.Cell className="eteg-text-right">$250.00</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.Cell className="eteg-font-medium">INV001</Table.Cell>
+          <Table.Cell>Karin Cristina M</Table.Cell>
           <Table.Cell>Paid</Table.Cell>
           <Table.Cell>Credit Card</Table.Cell>
           <Table.Cell className="eteg-text-right">$250.00</Table.Cell>
