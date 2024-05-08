@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ButtonProps } from "@/components/ui/button";
+import { ButtonProps } from "../ui/button";
 interface ComboboxRootProps extends React.InputHTMLAttributes<HTMLInputElement> {
     children: React.ReactNode;
 }

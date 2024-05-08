@@ -5,7 +5,7 @@ import { VariantProps } from 'class-variance-authority';
 import { IconType } from 'react-icons';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { ButtonProps as ButtonProps$1 } from '@/components/ui/button';
+import * as SeparatorPrimitive from '@radix-ui/react-separator';
 
 declare const buttonVariants: (props?: ({
     variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined;
@@ -96,7 +96,9 @@ interface ComboboxRootProps extends React.InputHTMLAttributes<HTMLInputElement> 
 declare function ComboboxRoot({ children, ...props }: ComboboxRootProps): React.JSX.Element;
 declare const Combobox: {
     Root: typeof ComboboxRoot;
-    Item: React.ForwardRefExoticComponent<ButtonProps$1 & React.RefAttributes<HTMLButtonElement>>;
+    Item: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 };
 
-export { Badge, type BadgeProps, Button, Combobox, Header, InputFile, type InputProps, InputText, Label, Pagination, Select, Skeleton, Table, badgeVariants };
+declare const Separator: React.ForwardRefExoticComponent<Omit<SeparatorPrimitive.SeparatorProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+
+export { Badge, type BadgeProps, Button, Combobox, Header, InputFile, type InputProps, InputText, Label, Pagination, Select, Separator, Skeleton, Table, badgeVariants };
