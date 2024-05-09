@@ -43,7 +43,7 @@ const DialogContent = React.forwardRef<
     >
       {children}
       <DialogPrimitive.Close className="eteg-absolute eteg-right-4 eteg-top-4 eteg-rounded-sm eteg-ring-offset-background focus:eteg-outline-none disabled:eteg-pointer-events-none data-[state=open]:eteg-bg-accent data-[state=open]:eteg-text-muted-foreground hover:eteg-text-destructive twp">
-        <FiX className="eteg-h-4 eteg-w-4" />
+        <FiX size={24} />
         <span className="eteg-sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
@@ -86,7 +86,7 @@ const DialogTitle = React.forwardRef<
   <DialogPrimitive.Title
     ref={ref}
     className={cn(
-      "eteg-text-lg eteg-font-semibold eteg-leading-none eteg-tracking-tight",
+      "eteg-text-xl eteg-font-semibold eteg-leading-none eteg-tracking-tight eteg-text-foreground",
       className
     )}
     {...props}
