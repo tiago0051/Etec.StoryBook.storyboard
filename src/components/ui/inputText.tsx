@@ -43,7 +43,7 @@ const InputText = React.forwardRef<HTMLInputElement, InputProps>(
             data-error={!!error}
             data-icon={!!Icon}
             className={cn(
-              "eteg-flex eteg-h-12 eteg-w-full eteg-rounded-md eteg-border eteg-border-input eteg-bg-transparent eteg-px-4 eteg-text-sm placeholder:text-muted-foreground eteg-disabled:cursor-not-allowed eteg-disabled:bg-muted eteg-disabled:text-muted-foreground eteg-text-foreground data-[error=true]:eteg-border-destructive data-[icon=true]:eteg-pl-12 focus:eteg-outline-none",
+              "eteg-flex eteg-h-12 eteg-w-full eteg-rounded-md eteg-border eteg-border-input eteg-bg-transparent eteg-px-4 eteg-text-sm placeholder:text-muted-foreground disabled:eteg-cursor-not-allowed disabled:eteg-bg-muted disabled:eteg-text-muted-foreground eteg-text-foreground data-[error=true]:eteg-border-destructive data-[icon=true]:eteg-pl-12 focus:eteg-outline-none",
               inputClassName
             )}
             ref={ref}

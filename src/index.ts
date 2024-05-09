@@ -13,3 +13,4 @@ export * from "./components/ui/skeleton";
 export * from "./components/ui/badge";
 export * from "./components/element/comboboxElement";
 export * from "./components/ui/separator";
+export * from "./components/ui/dialog";

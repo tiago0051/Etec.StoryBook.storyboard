@@ -1,9 +1,13 @@
 import React from "react";
 import { Select } from "@/components/ui/select";
 
-export function SelectExample() {
+interface SelectExampleProps {
+  disabled?: boolean;
+}
+
+export function SelectExample({ disabled }: SelectExampleProps) {
   return (
-    <Select.Root>
+    <Select.Root disabled={disabled}>
       <Select.Trigger className="w-[180px]">
         <Select.Value placeholder="Theme" />
       </Select.Trigger>

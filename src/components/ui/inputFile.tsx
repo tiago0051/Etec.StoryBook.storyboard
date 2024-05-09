@@ -57,7 +57,7 @@ export function InputFile({
         data-disabled={props.disabled}
         data-error={!!error}
         className={cn(
-          "eteg-h-12 eteg-border eteg-border-input eteg-grid eteg-grid-flow-col eteg-gap-3 eteg-rounded-md eteg-px-5 eteg-disabled:cursor-not-allowed data-[disabled=true]:eteg-bg-muted data-[error=true]:eteg-border-destructive",
+          "eteg-h-12 eteg-border eteg-border-input eteg-grid eteg-grid-flow-col eteg-gap-3 eteg-rounded-md eteg-px-5 disabled:eteg-cursor-not-allowed data-[disabled=true]:eteg-bg-muted data-[error=true]:eteg-border-destructive",
           className
         )}
       >

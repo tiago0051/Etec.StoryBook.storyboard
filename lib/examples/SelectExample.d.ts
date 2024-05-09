@@ -1,2 +1,6 @@
 import React from "react";
-export declare function SelectExample(): React.JSX.Element;
+interface SelectExampleProps {
+    disabled?: boolean;
+}
+export declare function SelectExample({ disabled }: SelectExampleProps): React.JSX.Element;
+export {};

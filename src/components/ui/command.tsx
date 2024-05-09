@@ -3,7 +3,7 @@ import { type DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 
 import { cn } from "@/lib/utils";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog } from "../../index";
 import { FiSearch } from "react-icons/fi";
 
 const Command = React.forwardRef<
@@ -25,13 +25,13 @@ interface CommandDialogProps extends DialogProps {}
 
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
-    <Dialog {...props}>
-      <DialogContent className="eteg-overflow-hidden eteg-p-0 eteg-shadow-lg">
+    <Dialog.Root {...props}>
+      <Dialog.Content className="eteg-overflow-hidden eteg-p-0 eteg-shadow-lg">
         <Command className="[&_[cmdk-group-heading]]:eteg-px-2 [&_[cmdk-group-heading]]:eteg-font-medium [&_[cmdk-group-heading]]:eteg-text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:eteg-pt-0 [&_[cmdk-group]]:eteg-px-2 [&_[cmdk-input-wrapper]_svg]:eteg-h-5 [&_[cmdk-input-wrapper]_svg]:eteg-w-5 [&_[cmdk-input]]:eteg-h-12 [&_[cmdk-item]]:eteg-px-2 [&_[cmdk-item]]:eteg-py-3 [&_[cmdk-item]_svg]:eteg-h-5 [&_[cmdk-item]_svg]:eteg-w-5">
           {children}
         </Command>
-      </DialogContent>
-    </Dialog>
+      </Dialog.Content>
+    </Dialog.Root>
   );
 };
 
