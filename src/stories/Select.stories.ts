@@ -21,6 +21,31 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {};
 
+export const Label: Story = {
+  args: {
+    label: "Select",
+  },
+};
+
+export const LabelRequired: Story = {
+  args: {
+    label: "Select",
+    required: true,
+  },
+};
+
+export const Error: Story = {
+  args: {
+    error: "Is required",
+  },
+};
+
+export const Placeholder: Story = {
+  args: {
+    placeholder: "This is select",
+  },
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true,
