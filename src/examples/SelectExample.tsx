@@ -12,6 +12,7 @@ export function SelectExample({ disabled }: SelectExampleProps) {
         <Select.Value placeholder="Theme" />
       </Select.Trigger>
       <Select.Content>
+        <Select.SearchItem />
         <Select.Item selected value="light">
           Light
         </Select.Item>

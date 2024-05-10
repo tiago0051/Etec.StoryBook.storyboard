@@ -2,7 +2,8 @@ import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 
 import { cn } from "@/lib/utils";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp, FiSearch } from "react-icons/fi";
+import { InputProps, InputText } from "./inputText";
 
 const SelectRoot = SelectPrimitive.Root;
 
@@ -135,6 +136,23 @@ const SelectItem = React.forwardRef<
 ));
 SelectItem.displayName = SelectPrimitive.Item.displayName;
 
+const SelectSearchItem = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, ...props }, ref) => (
+    <div className="eteg-h-12">
+      <InputText
+        ref={ref}
+        inputClassName={cn(
+          "eteg-border-x-transparent eteg-border-t-transparent eteg-h-auto eteg-rounded-none eteg-py-3 eteg-text-sm",
+          className
+        )}
+        icon={FiSearch}
+        {...props}
+      />
+    </div>
+  )
+);
+SelectSearchItem.displayName = SelectPrimitive.Item.displayName;
+
 const SelectSeparator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
@@ -155,6 +173,7 @@ export const Select = {
   Content: SelectContent,
   Label: SelectLabel,
   Item: SelectItem,
+  SearchItem: SelectSearchItem,
   Separator: SelectSeparator,
   ScrollUpButton: SelectScrollUpButton,
   ScrollDownButton: SelectScrollUpButton,
