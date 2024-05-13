@@ -9,8 +9,10 @@ interface SelectRootElementProps {
   disabled?: boolean;
   error?: string;
   label?: string;
+  onValueChange?: (value: string) => void;
   placeholder?: string;
   required?: boolean;
+  value?: string;
 }
 
 function SelectRoot({
@@ -19,8 +21,10 @@ function SelectRoot({
   disabled,
   error,
   label,
+  onValueChange,
   placeholder,
   required,
+  value,
 }: SelectRootElementProps) {
   return (
     <div className={cn("eteg-relative twp", className)}>
@@ -33,7 +37,12 @@ function SelectRoot({
           {label}
         </Label>
       )}
-      <SelectComp.Root required={required} disabled={disabled}>
+      <SelectComp.Root
+        required={required}
+        disabled={disabled}
+        onValueChange={onValueChange}
+        value={value}
+      >
         <SelectComp.Trigger
           data-error={!!error}
           className="data-[error=true]:eteg-border-destructive"

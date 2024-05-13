@@ -7,7 +7,7 @@ export * from "./components/ui/inputText";
 export * from "./components/ui/label";
 export * from "./components/ui/table";
 export * from "./components/element/paginationElement";
-export * from "./components/ui/select";
+export * from "./components/element/selectElement";
 export * from "./components/ui/label";
 export * from "./components/ui/skeleton";
 export * from "./components/ui/badge";
