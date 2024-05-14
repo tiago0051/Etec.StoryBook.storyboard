@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const labelVariants = cva(
-  "eteg-text-sm eteg-font-medium eteg-leading-none eteg-peer-disabled:cursor-not-allowed eteg-peer-disabled:opacity-70 eteg-font-lato eteg-text-border data-[error=true]:eteg-text-destructive"
+  "eteg-text-sm eteg-font-medium eteg-peer-disabled:cursor-not-allowed eteg-peer-disabled:opacity-70 eteg-font-lato eteg-text-border data-[error=true]:eteg-text-destructive eteg-relative"
 );
 
 const Label = React.forwardRef<
@@ -18,9 +18,9 @@ const Label = React.forwardRef<
     className={cn(labelVariants(), className)}
     {...props}
   >
-    {children}{" "}
+    {children}
     <span
-      className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-leading-3 eteg-hidden aria-required:eteg-inline"
+      className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-absolute eteg-hidden aria-required:eteg-inline -eteg-top-3 eteg-px-1"
       aria-required={props["aria-required"]}
     >
       *
