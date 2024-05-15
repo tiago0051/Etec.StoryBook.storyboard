@@ -1,6 +1,6 @@
 {
   "name": "etec.storyboard",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "type": "module",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-popover": "^1.0.7",

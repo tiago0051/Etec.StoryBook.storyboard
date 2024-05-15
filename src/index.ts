@@ -15,3 +15,4 @@ export * from "./components/element/comboboxElement";
 export * from "./components/ui/separator";
 export * from "./components/ui/dialog";
 export * from "./components/ui/alert-dialog";
+export * from "./components/ui/checkbox";

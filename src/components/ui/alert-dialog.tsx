@@ -4,7 +4,7 @@ import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
-const AlertDialog = AlertDialogPrimitive.Root;
+const AlertDialogRoot = AlertDialogPrimitive.Root;
 
 const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 
@@ -63,7 +63,7 @@ const AlertDialogFooter = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "eteg-flex eteg-flex-col-reverse sm:eteg-flex-row sm:eteg-justify-end sm:eteg-space-x-2",
+      "eteg-flex eteg-flex-col-reverse sm:eteg-flex-row sm:eteg-justify-end sm:eteg-space-x-4",
       className
     )}
     {...props}
@@ -127,16 +127,16 @@ const AlertDialogCancel = React.forwardRef<
 ));
 AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName;
 
-export {
-  AlertDialog,
-  AlertDialogPortal,
-  AlertDialogOverlay,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogFooter,
-  AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogAction,
-  AlertDialogCancel,
+export const AlertDialog = {
+  Root: AlertDialogRoot,
+  Portal: AlertDialogPortal,
+  Overlay: AlertDialogOverlay,
+  Trigger: AlertDialogTrigger,
+  Content: AlertDialogContent,
+  Header: AlertDialogHeader,
+  Footer: AlertDialogFooter,
+  Title: AlertDialogTitle,
+  Description: AlertDialogDescription,
+  Action: AlertDialogAction,
+  Cancel: AlertDialogCancel,
 };
