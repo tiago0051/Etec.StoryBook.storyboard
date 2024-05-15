@@ -2,19 +2,17 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { Label } from "./label";
-import { IconType } from "react-icons";
 
-export interface InputTextProps
+export interface InputDateProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
-  icon?: IconType;
   inputClassName?: string;
 }
 
-const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
+const InputDate = React.forwardRef<HTMLInputElement, InputDateProps>(
   (
-    { className, type, label, error, icon: Icon, inputClassName, ...props },
+    { className, type = "date", label, error, inputClassName, ...props },
     ref
   ) => {
     return (
@@ -31,19 +29,11 @@ const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         )}
 
         <div className="eteg-relative eteg-flex eteg-items-center">
-          {Icon && (
-            <Icon
-              size={18}
-              className="eteg-absolute eteg-left-4 eteg-text-muted-foreground"
-            />
-          )}
-
           <input
             type={type}
             data-error={!!error}
-            data-icon={!!Icon}
             className={cn(
-              "eteg-flex eteg-h-12 eteg-w-full eteg-rounded-md eteg-border eteg-border-input eteg-bg-transparent eteg-px-4 eteg-text-sm placeholder:text-muted-foreground disabled:eteg-cursor-not-allowed disabled:eteg-bg-muted disabled:eteg-text-muted-foreground eteg-text-foreground data-[error=true]:eteg-border-destructive data-[icon=true]:eteg-pl-12 focus:eteg-outline-none",
+              "eteg-flex eteg-h-12 eteg-w-full eteg-rounded-md eteg-border eteg-border-input eteg-bg-transparent eteg-px-4 eteg-text-sm placeholder:text-muted-foreground disabled:eteg-cursor-not-allowed disabled:eteg-bg-muted disabled:eteg-text-muted-foreground eteg-text-foreground data-[error=true]:eteg-border-destructive focus:eteg-outline-none",
               inputClassName
             )}
             ref={ref}
@@ -60,6 +50,6 @@ const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     );
   }
 );
-InputText.displayName = "InputText";
+InputDate.displayName = "InputDate";
 
-export { InputText };
+export { InputDate };

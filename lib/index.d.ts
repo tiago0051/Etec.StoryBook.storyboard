@@ -36,13 +36,13 @@ interface InputFileProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 declare function InputFile({ valueText, label, error, onRemove, className, icon: Icon, ...props }: InputFileProps): React__default.JSX.Element;
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     error?: string;
     icon?: IconType;
     inputClassName?: string;
 }
-declare const InputText: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
+declare const InputText: React.ForwardRefExoticComponent<InputTextProps & React.RefAttributes<HTMLInputElement>>;
 
 declare const Label: React.ForwardRefExoticComponent<Omit<LabelPrimitive.LabelProps & React.RefAttributes<HTMLLabelElement>, "ref"> & VariantProps<(props?: class_variance_authority_dist_types.ClassProp | undefined) => string> & React.RefAttributes<HTMLLabelElement>>;
 
@@ -86,7 +86,7 @@ interface SelectRootElementProps {
 declare function SelectRoot({ className, children, disabled, error, label, onValueChange, placeholder, required, value, }: SelectRootElementProps): React__default.JSX.Element;
 declare const Select: {
     Root: typeof SelectRoot;
-    SearchItem: React__default.ForwardRefExoticComponent<InputProps & React__default.RefAttributes<HTMLInputElement>>;
+    SearchItem: React__default.ForwardRefExoticComponent<InputTextProps & React__default.RefAttributes<HTMLInputElement>>;
     Item: React__default.ForwardRefExoticComponent<SelectItemProps & React__default.RefAttributes<HTMLDivElement>>;
 };
 
@@ -151,4 +151,11 @@ declare const AlertDialog: {
 
 declare const Checkbox: React.ForwardRefExoticComponent<Omit<CheckboxPrimitive.CheckboxProps & React.RefAttributes<HTMLButtonElement>, "ref"> & React.RefAttributes<HTMLButtonElement>>;
 
-export { AlertDialog, Badge, type BadgeProps, Button, Checkbox, Combobox, Dialog, Header, InputFile, type InputProps, InputText, Label, Pagination, Select, Separator, Skeleton, Table, badgeVariants };
+interface InputDateProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    label?: string;
+    error?: string;
+    inputClassName?: string;
+}
+declare const InputDate: React.ForwardRefExoticComponent<InputDateProps & React.RefAttributes<HTMLInputElement>>;
+
+export { AlertDialog, Badge, type BadgeProps, Button, Checkbox, Combobox, Dialog, Header, InputDate, type InputDateProps, InputFile, InputText, type InputTextProps, Label, Pagination, Select, Separator, Skeleton, Table, badgeVariants };

@@ -13,7 +13,7 @@ interface SelectRootElementProps {
 declare function SelectRoot({ className, children, disabled, error, label, onValueChange, placeholder, required, value, }: SelectRootElementProps): React.JSX.Element;
 export declare const Select: {
     Root: typeof SelectRoot;
-    SearchItem: React.ForwardRefExoticComponent<import("../..").InputProps & React.RefAttributes<HTMLInputElement>>;
+    SearchItem: React.ForwardRefExoticComponent<import("../..").InputTextProps & React.RefAttributes<HTMLInputElement>>;
     Item: React.ForwardRefExoticComponent<import("../ui/select").SelectItemProps & React.RefAttributes<HTMLDivElement>>;
 };
 export {};

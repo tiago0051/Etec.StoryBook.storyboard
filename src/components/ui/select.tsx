@@ -3,7 +3,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 
 import { cn } from "@/lib/utils";
 import { FiChevronDown, FiChevronUp, FiSearch } from "react-icons/fi";
-import { InputProps, InputText } from "./inputText";
+import { InputTextProps, InputText } from "./inputText";
 
 const SelectRoot = SelectPrimitive.Root;
 
@@ -136,7 +136,7 @@ const SelectItem = React.forwardRef<
 ));
 SelectItem.displayName = SelectPrimitive.Item.displayName;
 
-const SelectSearchItem = React.forwardRef<HTMLInputElement, InputProps>(
+const SelectSearchItem = React.forwardRef<HTMLInputElement, InputTextProps>(
   ({ className, ...props }, ref) => (
     <div className="eteg-h-12">
       <InputText
