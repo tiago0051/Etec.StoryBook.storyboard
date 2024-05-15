@@ -70,6 +70,10 @@ module.exports = {
           line: "hsl(var(--eteg-table-line))",
           dropdown: "hsl(var(--eteg-table-dropdown))",
         },
+        checkbox: {
+          DEFAULT: "hsl(var(--eteg-checkbox))",
+          foreground: "hsl(var(--eteg-checkbox-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--eteg-radius)",
