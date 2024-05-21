@@ -9,6 +9,7 @@ import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import * as AvatarPrimitive from '@radix-ui/react-avatar';
 
 declare const buttonVariants: (props?: ({
     variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined;
@@ -158,4 +159,10 @@ interface InputDateProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 declare const InputDate: React.ForwardRefExoticComponent<InputDateProps & React.RefAttributes<HTMLInputElement>>;
 
-export { AlertDialog, Badge, type BadgeProps, Button, Checkbox, Combobox, Dialog, Header, InputDate, type InputDateProps, InputFile, InputText, type InputTextProps, Label, Pagination, Select, Separator, Skeleton, Table, badgeVariants };
+declare const Avatar: {
+    Root: React.ForwardRefExoticComponent<Omit<AvatarPrimitive.AvatarProps & React.RefAttributes<HTMLSpanElement>, "ref"> & React.RefAttributes<HTMLSpanElement>>;
+    Image: React.ForwardRefExoticComponent<Omit<AvatarPrimitive.AvatarImageProps & React.RefAttributes<HTMLImageElement>, "ref"> & React.RefAttributes<HTMLImageElement>>;
+    Fallback: React.ForwardRefExoticComponent<Omit<AvatarPrimitive.AvatarFallbackProps & React.RefAttributes<HTMLSpanElement>, "ref"> & React.RefAttributes<HTMLSpanElement>>;
+};
+
+export { AlertDialog, Avatar, Badge, type BadgeProps, Button, Checkbox, Combobox, Dialog, Header, InputDate, type InputDateProps, InputFile, InputText, type InputTextProps, Label, Pagination, Select, Separator, Skeleton, Table, badgeVariants };
