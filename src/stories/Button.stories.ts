@@ -48,6 +48,13 @@ export const Outline: Story = {
   },
 };
 
+export const OutlineSecondary: Story = {
+  args: {
+    variant: "outlineSecondary",
+    children: "Button",
+  },
+};
+
 export const Tertiary: Story = {
   args: {
     variant: "secondary",

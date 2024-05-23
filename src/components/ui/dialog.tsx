@@ -36,7 +36,7 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "eteg-fixed eteg-left-[50%] eteg-top-[50%] eteg-z-50 eteg-grid eteg-w-full eteg-max-w-lg eteg-translate-x-[-50%] eteg-translate-y-[-50%] eteg-gap-4 eteg-border eteg-bg-background eteg-p-6 eteg-shadow-lg eteg-duration-200 data-[state=open]:eteg-animate-in data-[state=closed]:eteg-animate-out data-[state=closed]:eteg-fade-out-0 data-[state=open]:eteg-fade-in-0 data-[state=closed]:eteg-zoom-out-95 data-[state=open]:eteg-zoom-in-95 data-[state=closed]:eteg-slide-out-to-left-1/2 data-[state=closed]:eteg-slide-out-to-top-[48%] data-[state=open]:eteg-slide-in-from-left-1/2 data-[state=open]:eteg-slide-in-from-top-[48%] sm:eteg-rounded-lg twp",
+        "eteg-fixed eteg-left-[50%] eteg-top-[50%] eteg-z-50 eteg-grid eteg-w-full eteg-max-w-lg eteg-translate-x-[-50%] eteg-translate-y-[-50%] eteg-gap-4 eteg-border eteg-bg-background eteg-px-6 eteg-pt-10 eteg-pb-8 eteg-shadow-lg eteg-duration-200 data-[state=open]:eteg-animate-in data-[state=closed]:eteg-animate-out data-[state=closed]:eteg-fade-out-0 data-[state=open]:eteg-fade-in-0 data-[state=closed]:eteg-zoom-out-95 data-[state=open]:eteg-zoom-in-95 data-[state=closed]:eteg-slide-out-to-left-1/2 data-[state=closed]:eteg-slide-out-to-top-[48%] data-[state=open]:eteg-slide-in-from-left-1/2 data-[state=open]:eteg-slide-in-from-top-[48%] sm:eteg-rounded-lg twp",
         className
       )}
       {...props}
@@ -86,7 +86,7 @@ const DialogTitle = React.forwardRef<
   <DialogPrimitive.Title
     ref={ref}
     className={cn(
-      "eteg-text-xl eteg-font-semibold eteg-leading-none eteg-tracking-tight eteg-text-foreground",
+      "eteg-text-2xl sm:eteg-text-3xl eteg-font-semibold eteg-leading-none eteg-tracking-tight eteg-text-foreground eteg-max-w-[95%]",
       className
     )}
     {...props}
@@ -100,7 +100,10 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn("eteg-text-sm eteg-text-muted-foreground", className)}
+    className={cn(
+      "eteg-text-base sm:eteg-text-lg eteg-text-foreground/55 eteg-text-left",
+      className
+    )}
     {...props}
   />
 ));

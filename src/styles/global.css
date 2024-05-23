@@ -3,6 +3,10 @@
 @tailwind utilities;
 
   @layer base {
+    html {
+      font-family: 'lato'
+    }
+
     :root {
       --eteg-background: 0 0% 100%;
       --eteg-foreground: 217 28% 25%;

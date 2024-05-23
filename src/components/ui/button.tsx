@@ -15,6 +15,8 @@ const buttonVariants = cva(
           "eteg-bg-destructive eteg-text-destructive-foreground eteg-hover:bg-destructive-hover",
         outline:
           "eteg-border eteg-border-primary eteg-bg-transparent eteg-text-primary eteg-hover:bg-accent eteg-hover:text-primary-foreground eteg-hover:bg-primary",
+        outlineSecondary:
+          "eteg-border eteg-border-secondary eteg-bg-transparent eteg-text-secondary eteg-hover:bg-accent eteg-hover:text-secondary-foreground eteg-hover:bg-secondary",
         secondary:
           "eteg-bg-secondary eteg-text-secondary-foreground eteg-hover:bg-secondary-hover",
         ghost: "eteg-text-primary eteg-hover:text-primary-hover",

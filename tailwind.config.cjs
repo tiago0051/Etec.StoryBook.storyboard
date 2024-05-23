@@ -2,6 +2,7 @@ const {
   scopedPreflightStyles,
   isolateInsideOfContainer,
 } = require("tailwindcss-scoped-preflight");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -24,6 +25,7 @@ module.exports = {
     extend: {
       fontFamily: {
         lato: "lato",
+        sans: ['"Lato"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--eteg-border))",

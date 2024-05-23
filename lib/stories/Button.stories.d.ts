@@ -21,6 +21,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 export declare const Primary: Story;
 export declare const Outline: Story;
+export declare const OutlineSecondary: Story;
 export declare const Tertiary: Story;
 export declare const Ghost: Story;
 export declare const Link: Story;

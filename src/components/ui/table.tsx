@@ -74,17 +74,18 @@ const TableRow = React.forwardRef<
 ));
 TableRow.displayName = "TableRow";
 
-interface TableRowDropDownProps
-  extends React.HTMLAttributes<HTMLTableRowElement> {
+interface TableCellDropDownProps
+  extends React.TdHTMLAttributes<HTMLTableCellElement> {
   isOpen: boolean;
+  colSpan: number;
 }
 
 const TableRowDropDown = React.forwardRef<
-  HTMLTableRowElement,
-  TableRowDropDownProps
->(({ className, isOpen, ...props }, ref) => (
+  HTMLTableCellElement,
+  TableCellDropDownProps
+>(({ className, isOpen, children, ...props }, ref) => (
   <Table.Row className="eteg-border-t-0">
-    <Table.Cell colSpan={4} className="eteg-py-0">
+    <Table.Cell className="eteg-py-0" {...props}>
       <div
         data-open={isOpen}
         className={cn(
@@ -92,8 +93,9 @@ const TableRowDropDown = React.forwardRef<
           className
         )}
         ref={ref}
-        {...props}
-      />
+      >
+        {children}
+      </div>
     </Table.Cell>
   </Table.Row>
 ));

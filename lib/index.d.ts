@@ -12,7 +12,7 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 
 declare const buttonVariants: (props?: ({
-    variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined;
+    variant?: "default" | "destructive" | "outline" | "outlineSecondary" | "secondary" | "ghost" | "link" | null | undefined;
     size?: "default" | "sm" | "lg" | "icon" | "none" | null | undefined;
 } & class_variance_authority_dist_types.ClassProp) | undefined) => string;
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
@@ -47,8 +47,9 @@ declare const InputText: React.ForwardRefExoticComponent<InputTextProps & React.
 
 declare const Label: React.ForwardRefExoticComponent<Omit<LabelPrimitive.LabelProps & React.RefAttributes<HTMLLabelElement>, "ref"> & VariantProps<(props?: class_variance_authority_dist_types.ClassProp | undefined) => string> & React.RefAttributes<HTMLLabelElement>>;
 
-interface TableRowDropDownProps extends React.HTMLAttributes<HTMLTableRowElement> {
+interface TableCellDropDownProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
     isOpen: boolean;
+    colSpan: number;
 }
 declare const Table: {
     Root: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableElement> & React.RefAttributes<HTMLTableElement>>;
@@ -57,7 +58,7 @@ declare const Table: {
     Footer: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableSectionElement> & React.RefAttributes<HTMLTableSectionElement>>;
     Head: React.ForwardRefExoticComponent<React.ThHTMLAttributes<HTMLTableCellElement> & React.RefAttributes<HTMLTableCellElement>>;
     Row: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableRowElement> & React.RefAttributes<HTMLTableRowElement>>;
-    RowDropDown: React.ForwardRefExoticComponent<TableRowDropDownProps & React.RefAttributes<HTMLTableRowElement>>;
+    RowDropDown: React.ForwardRefExoticComponent<TableCellDropDownProps & React.RefAttributes<HTMLTableCellElement>>;
     Cell: React.ForwardRefExoticComponent<React.TdHTMLAttributes<HTMLTableCellElement> & React.RefAttributes<HTMLTableCellElement>>;
     Caption: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableCaptionElement> & React.RefAttributes<HTMLTableCaptionElement>>;
 };

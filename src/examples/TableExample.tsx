@@ -20,7 +20,7 @@ export function TableExample() {
           <Table.Cell>Credit Card</Table.Cell>
           <Table.Cell className="eteg-text-right">$250.00</Table.Cell>
         </Table.Row>
-        <Table.RowDropDown isOpen>
+        <Table.RowDropDown colSpan={4} isOpen>
           <p className="eteg-text-foreground eteg-font-lato eteg-font-semibold">
             Amount: <span className="eteg-font-normal">4</span>
           </p>

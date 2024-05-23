@@ -1,6 +1,6 @@
 {
   "name": "etec.storyboard",
-  "version": "1.16.0",
+  "version": "1.16.7",
   "type": "module",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
