@@ -1,11 +1,7 @@
 import * as React from "react";
 
 import { Button, ButtonProps } from "../ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover } from "@/components/ui/popover";
 import { FiSearch } from "react-icons/fi";
 import { InputText } from "../ui/inputText";
 import { cn } from "@/lib/utils";
@@ -45,8 +41,8 @@ function ComboboxRoot({ children, ...props }: ComboboxRootProps) {
 
   return (
     <div className="twp">
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild onClick={(e) => e.preventDefault()}>
+      <Popover.Root open={open} onOpenChange={setOpen}>
+        <Popover.Trigger asChild onClick={(e) => e.preventDefault()}>
           <div
             className="eteg-relative eteg-border eteg-border-input eteg-rounded-md eteg-overflow-hidden"
             ref={divRef}
@@ -67,15 +63,15 @@ function ComboboxRoot({ children, ...props }: ComboboxRootProps) {
               Buscar
             </Button>
           </div>
-        </PopoverTrigger>
-        <PopoverContent
+        </Popover.Trigger>
+        <Popover.Content
           className="p-0 popover eteg-box-border"
           id="popover"
           onOpenAutoFocus={(e) => e.preventDefault()}
         >
           <PopOverContent width={width}>{children}</PopOverContent>
-        </PopoverContent>
-      </Popover>
+        </Popover.Content>
+      </Popover.Root>
     </div>
   );
 }
@@ -96,7 +92,7 @@ const ComboboxItem = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-ComboboxItem.displayName = "BomboboxItem";
+ComboboxItem.displayName = "ComboboxItem";
 
 export const Combobox = {
   Root: ComboboxRoot,

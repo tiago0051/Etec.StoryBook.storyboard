@@ -31,9 +31,9 @@
       --eteg-accent: 210 40% 96.1%;
       --eteg-accent-foreground: 222.2 47.4% 11.2%;
 
-      --eteg-destructive: 0, 90%, 63%, 1;
+      --eteg-destructive: 0 100% 71%;
       --eteg-destructive-foreground: 210 40% 98%;
-      --eteg-destructive-hover: 0, 46%, 47%, 1;
+      --eteg-destructive-hover: 0 46% 47%;
 
       --eteg-border: 194 11% 46%;
       --eteg-input: 218 14% 80%;
