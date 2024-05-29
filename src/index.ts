@@ -18,3 +18,4 @@ export * from "./components/ui/alert-dialog";
 export * from "./components/ui/checkbox";
 export * from "./components/ui/inputDate";
 export * from "./components/ui/avatar";
+export * from "./components/ui/inputPhone";

@@ -166,4 +166,12 @@ declare const Avatar: {
     Fallback: React.ForwardRefExoticComponent<Omit<AvatarPrimitive.AvatarFallbackProps & React.RefAttributes<HTMLSpanElement>, "ref"> & React.RefAttributes<HTMLSpanElement>>;
 };
 
-export { AlertDialog, Avatar, Badge, type BadgeProps, Button, Checkbox, Combobox, Dialog, Header, InputDate, type InputDateProps, InputFile, InputText, type InputTextProps, Label, Pagination, Select, Separator, Skeleton, Table, badgeVariants };
+interface InputPhoneProps extends React__default.DetailedHTMLProps<React__default.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+    error?: string;
+    label?: string;
+    value?: string;
+    onChangeValue?: (value: string) => void;
+}
+declare const InputPhone: React__default.ForwardRefExoticComponent<Omit<InputPhoneProps, "ref"> & React__default.RefAttributes<HTMLInputElement>>;
+
+export { AlertDialog, Avatar, Badge, type BadgeProps, Button, Checkbox, Combobox, Dialog, Header, InputDate, type InputDateProps, InputFile, InputPhone, type InputPhoneProps, InputText, type InputTextProps, Label, Pagination, Select, Separator, Skeleton, Table, badgeVariants };

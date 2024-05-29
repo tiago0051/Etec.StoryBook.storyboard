@@ -1,8 +1,8 @@
+/// <reference types="react" />
 import type { StoryObj } from "@storybook/react";
-import { InputPhone } from "@/components/ui/inputPhone";
 declare const meta: {
     title: string;
-    component: typeof InputPhone;
+    component: import("react").ForwardRefExoticComponent<Omit<import("@/components/ui/inputPhone").InputPhoneProps, "ref"> & import("react").RefAttributes<HTMLInputElement>>;
     parameters: {};
     tags: string[];
     argTypes: {};
