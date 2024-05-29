@@ -44,7 +44,11 @@ export function InputFile({
   return (
     <div className="eteg-relative twp">
       {label && (
-        <Label data-error={!!error} htmlFor={props.name} className="block mb-3">
+        <Label
+          data-error={!!error}
+          htmlFor={props.name}
+          className="eteg-block eteg-mb-3"
+        >
           {label}{" "}
           {props.required && (
             <span className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-leading-3">
@@ -94,7 +98,7 @@ export function InputFile({
         </button>
       </div>
       {error && (
-        <span className="eteg-absolute eteg--bottom-5 eteg-text-xs eteg-text-destructive">
+        <span className="eteg-absolute -eteg-bottom-[18px] eteg-text-xs eteg-text-destructive">
           {error}
         </span>
       )}

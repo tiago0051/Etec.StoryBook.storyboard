@@ -20,7 +20,7 @@ const Label = React.forwardRef<
   >
     {children}
     <span
-      className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-absolute eteg-hidden aria-required:eteg-inline -eteg-top-3 eteg-px-1"
+      className="eteg-text-xl eteg-font-bold eteg-text-destructive eteg-absolute eteg-hidden aria-required:eteg-inline -eteg-top-2 eteg-px-1"
       aria-required={props["aria-required"]}
     >
       *

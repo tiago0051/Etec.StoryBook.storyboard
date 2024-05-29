@@ -52,7 +52,7 @@ const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
         </div>
 
         {error && (
-          <span className="eteg-absolute eteg--bottom-5 eteg-text-xs eteg-text-destructive">
+          <span className="eteg-absolute -eteg-bottom-[18px] eteg-text-xs eteg-text-destructive">
             {error}
           </span>
         )}

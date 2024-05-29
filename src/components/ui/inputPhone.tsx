@@ -15,16 +15,18 @@ interface CountryI {
 
 function PopoverContent({
   countries,
+  onClickCountry,
   isOpen,
-  width,
   onChangeSearch,
   value,
+  width,
 }: {
   countries: CountryI[];
   isOpen?: boolean;
   width?: number;
   onChangeSearch?: (text: string) => void;
   value?: string;
+  onClickCountry: (country: CountryI) => void;
 }) {
   React.useEffect(() => {
     const element = document.getElementById("popover");
@@ -47,6 +49,7 @@ function PopoverContent({
           key={country.pais}
           className="eteg-text-foreground eteg-justify-start"
           size="sm"
+          onClick={() => onClickCountry(country)}
         >
           <img src={country.img} alt={country.pais} className="eteg-mr-4" />
           <div className="eteg-grid eteg-grid-cols-[30px_10px_auto] eteg-gap-4">
@@ -122,26 +125,29 @@ const InputPhone = React.forwardRef<HTMLInputElement, InputPhoneProps>(
     function onChangeInput(value: string, country: CountryI) {
       const maxLength = 19 - country.ddi.toString().length;
       const formattedPhone = value
-        .replace(/[^0-9() -]/, "")
+        .replace(/[^0-9]/gi, "")
         .substring(0, maxLength);
 
-      onChangeValue && onChangeValue(formattedPhone);
+      onChangeValue && onChangeValue(`${country.ddi} ${formattedPhone}`);
+      setPopoverIsOpen(false);
     }
 
     return (
       <div
         data-error={!!error}
-        ref={divRef}
-        className="twp eteg-flex eteg-flex-col eteg-gap-3"
+        className="twp eteg-flex eteg-flex-col eteg-gap-3 eteg-relative group"
       >
-        <Label aria-required={props.required}>{label}</Label>
-        <div className="eteg-relative">
+        <Label data-error={!!error} aria-required={props.required}>
+          {label}
+        </Label>
+        <div className="eteg-relative" ref={divRef}>
           <Popover.Root onOpenChange={setPopoverIsOpen} open={popoverIsOpen}>
             <Popover.Trigger asChild>
               <Button
                 variant="ghost"
                 disabled={props.disabled}
-                className="eteg-flex eteg-gap-1 eteg-absolute eteg-border-r eteg-rounded-none eteg-border-r-input eteg-z-10"
+                data-error={!!error}
+                className="eteg-flex eteg-gap-1 eteg-absolute eteg-border-r eteg-rounded-none eteg-border-r-input eteg-z-10 data-[error=true]:eteg-border-r-destructive"
               >
                 <img src={selectedCountry.img} alt={selectedCountry.pais} />
                 <FiChevronDown size={14} className="eteg-text-foreground" />
@@ -150,10 +156,11 @@ const InputPhone = React.forwardRef<HTMLInputElement, InputPhoneProps>(
             <Popover.Content id="popover" align="start" className="eteg-p-0">
               <PopoverContent
                 countries={mostrarItens}
-                width={divWidth}
+                onClickCountry={(country) => onChangeInput("", country)}
                 isOpen={popoverIsOpen}
                 onChangeSearch={(text) => setSearch(text)}
                 value={search}
+                width={divWidth}
               />
             </Popover.Content>
           </Popover.Root>
@@ -165,10 +172,9 @@ const InputPhone = React.forwardRef<HTMLInputElement, InputPhoneProps>(
             inputClassName="eteg-pl-20"
             {...props}
             ref={ref}
+            error={error}
           />
         </div>
-
-        {error && <span>{error}</span>}
       </div>
     );
   }
