@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ButtonProps } from "../ui/button";
 interface ComboboxRootProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    children: React.ReactNode;
+    children: React.ReactElement[];
 }
 declare function ComboboxRoot({ children, ...props }: ComboboxRootProps): React.JSX.Element;
 export declare const Combobox: {

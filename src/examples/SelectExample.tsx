@@ -1,5 +1,5 @@
 import { Select } from "@/components/element/selectElement";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface SelectExampleProps {
   disabled?: boolean;
@@ -16,6 +16,12 @@ export function SelectExample({
   placeholder,
   required,
 }: SelectExampleProps) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 5000);
+  }, []);
+
   return (
     <Select.Root
       disabled={disabled}
@@ -25,15 +31,21 @@ export function SelectExample({
       required={required}
     >
       <Select.SearchItem />
-      <Select.Item selected value="light">
-        Light
-      </Select.Item>
-      <Select.Item selected={false} value="dark">
-        Dark
-      </Select.Item>
-      <Select.Item selected={false} value="system">
-        System
-      </Select.Item>
+      {loading ? (
+        <Select.SkeletonItem />
+      ) : (
+        <>
+          <Select.Item selected value="light">
+            Light
+          </Select.Item>
+          <Select.Item selected={false} value="dark">
+            Dark
+          </Select.Item>
+          <Select.Item selected={false} value="system">
+            System
+          </Select.Item>
+        </>
+      )}
     </Select.Root>
   );
 }

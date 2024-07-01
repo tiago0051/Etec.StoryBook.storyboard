@@ -21,7 +21,7 @@ const PopOverContent = ({ children, width }: PopOverContentProps) => {
 
 interface ComboboxRootProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  children: React.ReactNode;
+  children: React.ReactElement[];
 }
 
 function ComboboxRoot({ children, ...props }: ComboboxRootProps) {
@@ -34,10 +34,14 @@ function ComboboxRoot({ children, ...props }: ComboboxRootProps) {
   function openPopover(searchValue: string) {
     const searchValueFormatted = searchValue.trim();
 
-    if (searchValueFormatted.length > 0) {
+    if (searchValueFormatted.length > 0 && children.length > 0) {
       setOpen(true);
     } else setOpen(false);
   }
+
+  React.useEffect(() => {
+    if (children.length === 0) setOpen(false);
+  }, [children]);
 
   return (
     <div className="twp">

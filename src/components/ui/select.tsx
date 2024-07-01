@@ -4,6 +4,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import { cn } from "@/lib/utils";
 import { FiChevronDown, FiChevronUp, FiSearch } from "react-icons/fi";
 import { InputTextProps, InputText } from "./inputText";
+import { Skeleton } from "./skeleton";
 
 const SelectRoot = SelectPrimitive.Root;
 
@@ -153,6 +154,17 @@ const SelectSearchItem = React.forwardRef<HTMLInputElement, InputTextProps>(
 );
 SelectSearchItem.displayName = SelectPrimitive.Item.displayName;
 
+const SelectSkeletonItem = () => (
+  <div
+    className={
+      "eteg-relative eteg-flex eteg-items-center eteg-w-full eteg-rounded-sm eteg-h-12 eteg-px-2 eteg-outline-none"
+    }
+  >
+    <Skeleton className="eteg-h-5 eteg-w-full" />
+  </div>
+);
+SelectSkeletonItem.displayName = SelectPrimitive.Item.displayName;
+
 const SelectSeparator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
@@ -174,6 +186,7 @@ export const Select = {
   Label: SelectLabel,
   Item: SelectItem,
   SearchItem: SelectSearchItem,
+  SkeletonItem: SelectSkeletonItem,
   Separator: SelectSeparator,
   ScrollUpButton: SelectScrollUpButton,
   ScrollDownButton: SelectScrollUpButton,

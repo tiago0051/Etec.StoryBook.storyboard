@@ -88,8 +88,12 @@ interface SelectRootElementProps {
 declare function SelectRoot({ className, children, disabled, error, label, onValueChange, placeholder, required, value, }: SelectRootElementProps): React__default.JSX.Element;
 declare const Select: {
     Root: typeof SelectRoot;
-    SearchItem: React__default.ForwardRefExoticComponent<InputTextProps & React__default.RefAttributes<HTMLInputElement>>;
     Item: React__default.ForwardRefExoticComponent<SelectItemProps & React__default.RefAttributes<HTMLDivElement>>;
+    SearchItem: React__default.ForwardRefExoticComponent<InputTextProps & React__default.RefAttributes<HTMLInputElement>>;
+    SkeletonItem: {
+        (): React__default.JSX.Element;
+        displayName: string | undefined;
+    };
 };
 
 declare function Skeleton({ className, ...props }: React__default.HTMLAttributes<HTMLDivElement>): React__default.JSX.Element;
@@ -102,7 +106,7 @@ interface BadgeProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<
 declare function Badge({ className, variant, ...props }: BadgeProps): React.JSX.Element;
 
 interface ComboboxRootProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    children: React.ReactNode;
+    children: React.ReactElement[];
 }
 declare function ComboboxRoot({ children, ...props }: ComboboxRootProps): React.JSX.Element;
 declare const Combobox: {

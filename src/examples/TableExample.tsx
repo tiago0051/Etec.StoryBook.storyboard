@@ -7,10 +7,10 @@ export function TableExample() {
       <Table.Caption>A list of your recent invoices.</Table.Caption>
       <Table.Header>
         <Table.Row>
-          <Table.Head>Invoice</Table.Head>
-          <Table.Head>Status</Table.Head>
-          <Table.Head>Method</Table.Head>
-          <Table.Head className="eteg-text-right">Amount</Table.Head>
+          <Table.Head>INVOICE</Table.Head>
+          <Table.Head>STATUS</Table.Head>
+          <Table.Head>METHOD</Table.Head>
+          <Table.Head className="eteg-text-right">AMOUNT</Table.Head>
         </Table.Row>
       </Table.Header>
       <Table.Body>

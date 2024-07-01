@@ -123,7 +123,7 @@ const TableCell = React.forwardRef<
   <td
     ref={ref}
     className={cn(
-      "eteg-py-6 eteg-text-sm eteg-font-lato eteg-text-foreground/85 [&:last-child]:eteg-pr-0 eteg-align-middle eteg-pr-4",
+      "eteg-py-6 eteg-text-sm eteg-font-lato eteg-text-foreground/80 [&:last-child]:eteg-pr-0 eteg-align-middle eteg-pr-4",
       className
     )}
     {...props}
