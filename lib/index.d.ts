@@ -51,6 +51,9 @@ interface TableCellDropDownProps extends React.TdHTMLAttributes<HTMLTableCellEle
     isOpen: boolean;
     colSpan: number;
 }
+interface TableCellStatusProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
+    status: boolean;
+}
 declare const Table: {
     Root: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableElement> & React.RefAttributes<HTMLTableElement>>;
     Header: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableSectionElement> & React.RefAttributes<HTMLTableSectionElement>>;
@@ -60,6 +63,7 @@ declare const Table: {
     Row: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableRowElement> & React.RefAttributes<HTMLTableRowElement>>;
     RowDropDown: React.ForwardRefExoticComponent<TableCellDropDownProps & React.RefAttributes<HTMLTableCellElement>>;
     Cell: React.ForwardRefExoticComponent<React.TdHTMLAttributes<HTMLTableCellElement> & React.RefAttributes<HTMLTableCellElement>>;
+    CellStatus: React.ForwardRefExoticComponent<TableCellStatusProps & React.RefAttributes<HTMLTableCellElement>>;
     Caption: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLTableCaptionElement> & React.RefAttributes<HTMLTableCaptionElement>>;
 };
 

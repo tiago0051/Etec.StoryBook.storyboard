@@ -131,6 +131,27 @@ const TableCell = React.forwardRef<
 ));
 TableCell.displayName = "TableCell";
 
+interface TableCellStatusProps
+  extends React.TdHTMLAttributes<HTMLTableCellElement> {
+  status: boolean;
+}
+
+const TableCellStatus = React.forwardRef<
+  HTMLTableCellElement,
+  TableCellStatusProps
+>(({ status, className, ...props }, ref) => (
+  <td
+    ref={ref}
+    data-status={status}
+    className={cn(
+      "eteg-py-6 eteg-text-sm eteg-font-lato eteg-text-foreground/80 [&:last-child]:eteg-pr-0 eteg-align-middle eteg-pr-4 eteg-text-muted-foreground data-[status=true]:eteg-text-primary",
+      className
+    )}
+    {...props}
+  />
+));
+TableCellStatus.displayName = "TableCellStatus";
+
 const TableCaption = React.forwardRef<
   HTMLTableCaptionElement,
   React.HTMLAttributes<HTMLTableCaptionElement>
@@ -155,5 +176,6 @@ export const Table = {
   Row: TableRow,
   RowDropDown: TableRowDropDown,
   Cell: TableCell,
+  CellStatus: TableCellStatus,
   Caption: TableCaption,
 };

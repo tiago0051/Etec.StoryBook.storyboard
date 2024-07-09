@@ -16,7 +16,7 @@ export function TableExample() {
       <Table.Body>
         <Table.Row>
           <Table.Cell>Karin Cristina M</Table.Cell>
-          <Table.Cell>Paid</Table.Cell>
+          <Table.CellStatus status={true}>Paid</Table.CellStatus>
           <Table.Cell>Credit Card</Table.Cell>
           <Table.Cell className="eteg-text-right">$250.00</Table.Cell>
         </Table.Row>
@@ -30,13 +30,13 @@ export function TableExample() {
         </Table.RowDropDown>
         <Table.Row>
           <Table.Cell>Karin Cristina M</Table.Cell>
-          <Table.Cell>Paid</Table.Cell>
+          <Table.CellStatus status={true}>Paid</Table.CellStatus>
           <Table.Cell>Credit Card</Table.Cell>
           <Table.Cell className="eteg-text-right">$250.00</Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Cell>Karin Cristina M</Table.Cell>
-          <Table.Cell>Paid</Table.Cell>
+          <Table.CellStatus status={false}>Awaiting</Table.CellStatus>
           <Table.Cell>Credit Card</Table.Cell>
           <Table.Cell className="eteg-text-right">$250.00</Table.Cell>
         </Table.Row>
