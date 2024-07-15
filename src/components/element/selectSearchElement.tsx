@@ -15,7 +15,7 @@ export interface SelectSearchContentProps {
   inputPlaceholder?: string;
   buttonRef: React.RefObject<HTMLButtonElement>;
   onChange: (value: string) => void;
-  onSelect: () => void;
+  onSelect: (index: number) => void;
   value: string;
 }
 
@@ -57,7 +57,16 @@ const SelectSearchContent = ({
         />
         <Command.Empty>{emptyMessage}</Command.Empty>
         <Command.List>
-          <Command.Group onSelect={() => onSelect()}>{children}</Command.Group>
+          <Command.Group>
+            {React.Children.map(children, (child, index) => (
+              <Command.Item
+                onSelect={() => onSelect(index)}
+                className="eteg-h-12 eteg-px-2"
+              >
+                {child}
+              </Command.Item>
+            ))}
+          </Command.Group>
         </Command.List>
       </Command.Root>
     </Popover.Content>
@@ -66,28 +75,9 @@ const SelectSearchContent = ({
 
 SelectSearchContent.displayName = "SelectSearchContent";
 
-export interface SelectSearchItemProps
-  extends React.ComponentPropsWithoutRef<typeof Command.Item> {
-  children: React.ReactNode;
-}
-
-const SelectSearchItem = React.forwardRef<
-  React.ElementRef<typeof Command.Item>,
-  SelectSearchItemProps
->(({ className, ...props }) => (
-  <Command.Item {...props} className={cn("eteg-h-12 eteg-px-2", className)} />
-));
-
-SelectSearchItem.displayName = "SelectSearchItem";
-
-const SelectSearchSkeletonItem = React.forwardRef<
-  React.ElementRef<typeof Command.Item>,
-  React.ComponentPropsWithoutRef<typeof Command.Item>
->(({ className, ...props }) => (
-  <Command.Item {...props} className={cn("eteg-h-12 eteg-px-2", className)}>
-    <Skeleton className="eteg-h-5 eteg-w-full" />
-  </Command.Item>
-));
+const SelectSearchSkeletonItem = () => (
+  <Skeleton className="eteg-h-5 eteg-w-full" />
+);
 
 SelectSearchSkeletonItem.displayName = "SelectSearchSkeletonItem";
 
@@ -100,6 +90,7 @@ export interface SelectSearchProps {
   inputPlaceholder?: string;
   label?: string;
   onChange: (value: string) => void;
+  onSelect: (index: number) => void;
   required?: boolean;
   trigger: React.ReactNode;
   value: string;
@@ -108,6 +99,7 @@ export interface SelectSearchProps {
 function SelectSearchRoot({
   children,
   onChange,
+  onSelect,
   trigger,
   value,
   className,
@@ -152,15 +144,15 @@ function SelectSearchRoot({
         <SelectSearchContent
           buttonRef={buttonRef}
           value={value}
-          onSelect={() => {
-            setOpen(false);
-          }}
           onChange={onChange}
+          onSelect={(index) => {
+            setOpen(false);
+            onSelect(index);
+          }}
           emptyMessage={emptyMessage}
           inputPlaceholder={inputPlaceholder}
-        >
-          {children}
-        </SelectSearchContent>
+          children={children}
+        />
       </Popover.Root>
 
       {error && (
@@ -174,6 +166,5 @@ function SelectSearchRoot({
 
 export const SelectSearch = {
   Root: SelectSearchRoot,
-  Item: SelectSearchItem,
   ItemSkeleton: SelectSearchSkeletonItem,
 };

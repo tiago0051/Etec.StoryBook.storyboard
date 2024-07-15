@@ -16,13 +16,21 @@ export function SelectSearchExample({
   error,
   disabled,
 }: SelectSearchExampleProps) {
+  const items = new Array(5)
+    .fill({})
+    .map((_v, index) => ({ name: `Teste${index + 1}` }));
+
   const [searchText, setSearchText] = useState("");
+  const [itemSelected, setItemSelected] = useState<{
+    name: string;
+  } | null>(null);
 
   return (
     <SelectSearch.Root
       onChange={setSearchText}
+      onSelect={(index) => setItemSelected(items[index])}
       value={searchText}
-      trigger={<p>Teste</p>}
+      trigger={<p>{itemSelected?.name}</p>}
       error={error}
       label={label}
       required={required}
@@ -30,7 +38,9 @@ export function SelectSearchExample({
       emptyMessage="Teste"
       disabled={disabled}
     >
-      <SelectSearch.Item>Teste</SelectSearch.Item>
+      {items.map((value) => (
+        <p key={value.name}>{value.name}</p>
+      ))}
       <SelectSearch.ItemSkeleton />
     </SelectSearch.Root>
   );

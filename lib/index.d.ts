@@ -270,11 +270,8 @@ interface SelectSearchContentProps {
     inputPlaceholder?: string;
     buttonRef: React__default.RefObject<HTMLButtonElement>;
     onChange: (value: string) => void;
-    onSelect: () => void;
+    onSelect: (index: number) => void;
     value: string;
-}
-interface SelectSearchItemProps extends React__default.ComponentPropsWithoutRef<typeof Command.Item> {
-    children: React__default.ReactNode;
 }
 interface SelectSearchProps {
     children: React__default.ReactNode;
@@ -285,27 +282,18 @@ interface SelectSearchProps {
     inputPlaceholder?: string;
     label?: string;
     onChange: (value: string) => void;
+    onSelect: (index: number) => void;
     required?: boolean;
     trigger: React__default.ReactNode;
     value: string;
 }
-declare function SelectSearchRoot({ children, onChange, trigger, value, className, disabled, emptyMessage, error, inputPlaceholder, label, required, }: SelectSearchProps): React__default.JSX.Element;
+declare function SelectSearchRoot({ children, onChange, onSelect, trigger, value, className, disabled, emptyMessage, error, inputPlaceholder, label, required, }: SelectSearchProps): React__default.JSX.Element;
 declare const SelectSearch: {
     Root: typeof SelectSearchRoot;
-    Item: React__default.ForwardRefExoticComponent<SelectSearchItemProps & React__default.RefAttributes<HTMLDivElement>>;
-    ItemSkeleton: React__default.ForwardRefExoticComponent<Omit<Omit<{
-        children?: React__default.ReactNode;
-    } & Omit<Pick<Pick<React__default.DetailedHTMLProps<React__default.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "key" | keyof React__default.HTMLAttributes<HTMLDivElement>> & {
-        ref?: React__default.Ref<HTMLDivElement> | undefined;
-    } & {
-        asChild?: boolean | undefined;
-    }, "asChild" | "key" | keyof React__default.HTMLAttributes<HTMLDivElement>>, "disabled" | "value" | "onSelect"> & {
-        disabled?: boolean | undefined;
-        onSelect?: ((value: string) => void) | undefined;
-        value?: string | undefined;
-        keywords?: string[] | undefined;
-        forceMount?: boolean | undefined;
-    } & React__default.RefAttributes<HTMLDivElement>, "ref"> & React__default.RefAttributes<HTMLDivElement>, "ref"> & React__default.RefAttributes<HTMLDivElement>>;
+    ItemSkeleton: {
+        (): React__default.JSX.Element;
+        displayName: string;
+    };
 };
 
-export { AlertDialog, Avatar, Badge, type BadgeProps, Button, Checkbox, Combobox, Command, type CommandDialogProps, Dialog, Header, InputDate, type InputDateProps, InputFile, InputPhone, type InputPhoneProps, InputText, type InputTextProps, Label, Pagination, Select, SelectSearch, type SelectSearchContentProps, type SelectSearchItemProps, type SelectSearchProps, Separator, Skeleton, Table, badgeVariants };
+export { AlertDialog, Avatar, Badge, type BadgeProps, Button, Checkbox, Combobox, Command, type CommandDialogProps, Dialog, Header, InputDate, type InputDateProps, InputFile, InputPhone, type InputPhoneProps, InputText, type InputTextProps, Label, Pagination, Select, SelectSearch, type SelectSearchContentProps, type SelectSearchProps, Separator, Skeleton, Table, badgeVariants };
