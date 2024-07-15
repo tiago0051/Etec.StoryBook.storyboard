@@ -65,6 +65,5 @@ function SelectRoot({
 export const Select = {
   Root: SelectRoot,
   Item: SelectComp.Item,
-  SearchItem: SelectComp.SearchItem,
   SkeletonItem: SelectComp.SkeletonItem,
 };

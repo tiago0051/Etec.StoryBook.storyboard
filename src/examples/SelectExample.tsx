@@ -30,7 +30,6 @@ export function SelectExample({
       placeholder={placeholder}
       required={required}
     >
-      <Select.SearchItem />
       {loading ? (
         <Select.SkeletonItem />
       ) : (

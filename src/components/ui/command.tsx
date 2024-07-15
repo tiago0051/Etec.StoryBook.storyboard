@@ -1,35 +1,35 @@
-import * as React from "react";
+import React from "react";
 import { type DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 
 import { cn } from "@/lib/utils";
-import { Dialog } from "../../index";
 import { FiSearch } from "react-icons/fi";
+import { Dialog } from "./dialog";
 
-const Command = React.forwardRef<
+const CommandRoot = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive>
 >(({ className, ...props }, ref) => (
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "eteg-flex eteg-h-full eteg-w-full eteg-flex-col eteg-overflow-hidden eteg-rounded-md eteg-bg-popover eteg-text-popover-foreground",
+      "eteg-flex eteg-h-full eteg-w-full eteg-flex-col eteg-overflow-hidden eteg-rounded-md eteg-bg-popover eteg-text-popover-foreground twp",
       className
     )}
     {...props}
   />
 ));
-Command.displayName = CommandPrimitive.displayName;
+CommandRoot.displayName = CommandPrimitive.displayName;
 
-interface CommandDialogProps extends DialogProps {}
+export interface CommandDialogProps extends DialogProps {}
 
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
     <Dialog.Root {...props}>
       <Dialog.Content className="eteg-overflow-hidden eteg-p-0 eteg-shadow-lg">
-        <Command className="[&_[cmdk-group-heading]]:eteg-px-2 [&_[cmdk-group-heading]]:eteg-font-medium [&_[cmdk-group-heading]]:eteg-text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:eteg-pt-0 [&_[cmdk-group]]:eteg-px-2 [&_[cmdk-input-wrapper]_svg]:eteg-h-5 [&_[cmdk-input-wrapper]_svg]:eteg-w-5 [&_[cmdk-input]]:eteg-h-12 [&_[cmdk-item]]:eteg-px-2 [&_[cmdk-item]]:eteg-py-3 [&_[cmdk-item]_svg]:eteg-h-5 [&_[cmdk-item]_svg]:eteg-w-5">
+        <CommandRoot className="[&_[cmdk-group-heading]]:eteg-px-2 [&_[cmdk-group-heading]]:eteg-font-medium [&_[cmdk-group-heading]]:eteg-text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:eteg-pt-0 [&_[cmdk-group]]:eteg-px-2 [&_[cmdk-input-wrapper]_svg]:eteg-h-5 [&_[cmdk-input-wrapper]_svg]:eteg-w-5 [&_[cmdk-input]]:eteg-h-12 [&_[cmdk-item]]:eteg-px-2 [&_[cmdk-item]]:eteg-py-3 [&_[cmdk-item]_svg]:eteg-h-5 [&_[cmdk-item]_svg]:eteg-w-5">
           {children}
-        </Command>
+        </CommandRoot>
       </Dialog.Content>
     </Dialog.Root>
   );
@@ -121,7 +121,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "eteg-relative eteg-flex eteg-cursor-default eteg-select-none eteg-items-center eteg-rounded-sm eteg-px-2 eteg-py-1.5 eteg-text-sm eteg-outline-none aria-selected:eteg-bg-accent aria-selected:eteg-text-accent-foreground data-[disabled]:eteg-pointer-events-none data-[disabled]:eteg-opacity-50",
+      "eteg-relative eteg-flex eteg-cursor-default eteg-select-none eteg-items-center eteg-rounded-sm eteg-px-2 eteg-py-1.5 eteg-text-sm eteg-outline-none aria-selected:eteg-bg-accent aria-selected:eteg-text-accent-foreground data-[disabled=true]:eteg-pointer-events-none data-[disabled=true]:eteg-opacity-50",
       className
     )}
     {...props}
@@ -146,14 +146,14 @@ const CommandShortcut = ({
 };
 CommandShortcut.displayName = "CommandShortcut";
 
-export {
-  Command,
-  CommandDialog,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandShortcut,
-  CommandSeparator,
+export const Command = {
+  Root: CommandRoot,
+  Dialog: CommandDialog,
+  Input: CommandInput,
+  List: CommandList,
+  Empty: CommandEmpty,
+  Group: CommandGroup,
+  Item: CommandItem,
+  Shortcut: CommandShortcut,
+  Separator: CommandSeparator,
 };

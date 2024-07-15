@@ -14,7 +14,6 @@ declare function SelectRoot({ className, children, disabled, error, label, onVal
 export declare const Select: {
     Root: typeof SelectRoot;
     Item: React.ForwardRefExoticComponent<import("../ui/select").SelectItemProps & React.RefAttributes<HTMLDivElement>>;
-    SearchItem: React.ForwardRefExoticComponent<import("../..").InputTextProps & React.RefAttributes<HTMLInputElement>>;
     SkeletonItem: {
         (): React.JSX.Element;
         displayName: string | undefined;

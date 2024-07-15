@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { InputTextProps } from "./inputText";
 export interface SelectItemProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> {
     selected: boolean;
 }
@@ -12,7 +11,6 @@ export declare const Select: {
     Content: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectContentProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
     Label: React.ForwardRefExoticComponent<Omit<SelectPrimitive.SelectLabelProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
     Item: React.ForwardRefExoticComponent<SelectItemProps & React.RefAttributes<HTMLDivElement>>;
-    SearchItem: React.ForwardRefExoticComponent<InputTextProps & React.RefAttributes<HTMLInputElement>>;
     SkeletonItem: {
         (): React.JSX.Element;
         displayName: string | undefined;

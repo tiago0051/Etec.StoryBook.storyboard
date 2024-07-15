@@ -19,3 +19,5 @@ export * from "./components/ui/checkbox";
 export * from "./components/ui/inputDate";
 export * from "./components/ui/avatar";
 export * from "./components/ui/inputPhone";
+export * from "./components/ui/command";
+export * from "./components/element/selectSearchElement";
