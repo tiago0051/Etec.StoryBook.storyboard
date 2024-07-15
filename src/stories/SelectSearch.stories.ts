@@ -36,6 +36,7 @@ export const LabelRequired: Story = {
 
 export const Error: Story = {
   args: {
+    label: "This is an error",
     error: "Is required",
   },
 };
