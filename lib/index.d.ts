@@ -94,6 +94,7 @@ declare function SelectRoot({ className, children, disabled, error, label, onVal
 declare const Select: {
     Root: typeof SelectRoot;
     Item: React__default.ForwardRefExoticComponent<SelectItemProps & React__default.RefAttributes<HTMLDivElement>>;
+    SearchItem: React__default.ForwardRefExoticComponent<InputTextProps & React__default.RefAttributes<HTMLInputElement>>;
     SkeletonItem: {
         (): React__default.JSX.Element;
         displayName: string | undefined;
